@@ -1,0 +1,41 @@
+/*Entire box for the top*/
+.matches-header-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 20px 0px 20px;
+    width: 100vw;
+    height: 12vh;
+    background-color: #212121;
+}
+
+
+/*Edits the box containing the search, calendar, and current game buttons*/
+.matches-header-buttons-container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: last baseline;
+    margin-bottom: 5px;
+}
+/*Edits each button for the header*/
+.matches-header-buttons-container img{
+    height: 30%;
+}
+
+
+/*Edits the box containing the scroll bar*/
+.matches-header-scroll-container{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100vw;
+    height: 4vh;
+    background-color: #212121;
+}
+.matches-header-scroll-container h2{
+    white-space: nowrap;
+}

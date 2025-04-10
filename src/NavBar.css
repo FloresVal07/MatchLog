@@ -1,0 +1,38 @@
+/**
+    THIS IS THE ENTIRE HEADER (NAVBAR)
+**/
+.navbar {
+    all: unset;
+    display: flex;
+    background-color: #212121;
+    width: 100vw;
+    height: 10vh;
+    min-height: 60px;
+    align-items: center; /* changed from "last baseline" for more predictable vertical centering */
+    justify-content: space-between;
+    
+    /* Stick the navbar to the bottom */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/**
+    THESE EDIT THE CLICKABLE NAVBAR OPTIONS
+**/
+.navbar-options {
+    /* Ensure the ul spans the available width */
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly; /* Use space-evenly so each item gets equal space */
+    align-items: center;  /* centers items vertically */
+    gap: 10px;  /* optional gap between items */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-options li {
+    all: unset;
+}
