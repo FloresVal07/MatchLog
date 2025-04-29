@@ -1,3 +1,4 @@
+/* Dropdown Container */
 .dropdown-container {
     position: relative;
     width: calc(100vw - 20px);
@@ -5,7 +6,8 @@
     font-family: sans-serif;
     color: white;
 }
-  
+
+/* Dropdown Header */
 .dropdown-header {
     background: #212121;
     padding: 12px;
@@ -16,16 +18,17 @@
     align-items: center;
 }
 
-.dropdown-following-icon{
+.dropdown-following-icon {
     margin-bottom: 2px;
     margin-right: 5px;
 }
 
-.dropdown-header span{
+.dropdown-header span {
     font-size: 16px;
     font-weight: bold;
 }
 
+/* Dropdown Matches Count Badge */
 .drop-down-matches-length-container {
     background-color: #323232;
     border-radius: 9999px; /* pill-shaped */
@@ -37,25 +40,27 @@
     height: 24px;
     font-size: 14px;
     color: white;
-  }  
+}
 
-.drop-down-arrow-container{
+/* Dropdown Arrow Container */
+.drop-down-arrow-container {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 10px;
 }
 
+/* Dropdown Arrow Icon */
 .dropdown-arrow-icon {
     height: 65%;
     transition: transform 0.3s ease;
 }
-  
+
 .dropdown-arrow-icon.rotated {
     transform: rotate(180deg);
 }
-  
-  
+
+/* Dropdown List */
 .dropdown-list {
     display: flex;
     flex-direction: column;
@@ -67,10 +72,8 @@
     justify-content: center;
     margin-bottom: 5px;
 }
-  
+
 .dropdown-list.open {
-    display: flex;
-    flex-direction: column;
     max-height: 500px;
     opacity: 1;
     border-radius: 6px;
@@ -78,181 +81,106 @@
     padding: 4px;
     margin-bottom: 5px;
 }
-  
-/* The wrapper for each match item (dropdown list) */
+
+/* Dropdown Item */
 .dropdown-item {
     display: flex;
-    justify-content: space-between;   /* Space between home team, score, and away team */
-    align-items: center;              /* Vertically align the icons and text */
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    padding: 10px 30px;               /* Padding for spacing inside each item */
-    box-sizing: border-box;           /* Ensures padding doesn't affect width */
+    gap: 16px;
 }
 
-/* Home team container (icon + name) */
+/* Team Container (Home and Away) */
 .dropdown-item .team {
     display: flex;
-    align-items: center;              /* Vertically align the icon with the text */
-    justify-content: flex-start;      /* Align home team elements to the left */
-    gap: 8px;                         /* Space between logo and team name */
-}
-
-/* Score section (centered in the entire width of the item) */
-.dropdown-item .score {
-    font-size: 18px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;          /* Center score horizontally */
     align-items: center;
-    position: absolute;               /* Position it absolutely to the center */
-    left: 50%;                        /* Start from the center of the container */
-    transform: translateX(-50%);      /* Adjust to exactly center it */
-    white-space: nowrap;              /* Ensures score stays in one line */
-    opacity: 0;                       /* Make it hidden initially */
-    transition: opacity 0s;           /* No transition for opacity (instant show/hide) */
+    gap: 8px; /* Space between team name and logo */
+    flex: 1 1 45%; /* Each team gets flexible width */
+    min-width: 0;
+    justify-content: flex-start; /* Align content to the left */
 }
 
-/* When the dropdown is open, show the scoreline instantly */
-.dropdown-list.open .dropdown-item .score {
-    opacity: 1;                       /* Show scoreline instantly when open */
-}
-
-/* Away team container (icon + name) */
+/* Away Team Container (Right) */
 .dropdown-item .team.right {
     display: flex;
-    align-items: center;              /* Vertically align away team icon with the text */
-    justify-content: flex-end;        /* Align away team elements to the right */
-    gap: 8px;                         /* Space between logo and team name */
+    align-items: center;
+    gap: 8px; /* Space between team name and logo */
+    flex: 1 1 40%; /* Reduced the width to make it smaller */
 }
 
-/* Image styling (team logos) */
+/* Image Styling (team logos) */
 .dropdown-item img {
-    height: 24px;                     /* Standardize icon size */
-    margin-right: 5px;                /* Space between icon and text */
+    height: 20px;
+    min-width: 20px;  /* Set minimum width to 20px */
 }
 
-/* Ensure no margin on the headings */
-.dropdown-item h3, .dropdown-item h2 {
-    margin: 0;
-}
-
-/* For the dropdown list itself (apply fading and sliding transition) */
-.dropdown-list {
+/* Team Name Styling */
+.team-name {
     display: flex;
-    flex-direction: column;
-    height: 0;                       /* Set height to 0 initially */
+    flex-direction: row; /* Align name and logo side by side */
+    align-items: center;
+    justify-content: flex-start; /* Align the team name and logo to the left */
+    flex-grow: 1; /* Allow team names to grow and take up available space */
+}
+
+/* Prevent text from taking 100% width */
+.team-name h3 {
+    margin: 0;
+    font-size: 18px;
+    overflow: hidden;
+}
+
+/* Make score text larger */
+.dropdown-item .score h2 {
+    font-size: 24px;
+    white-space: nowrap;
+}
+
+/* Dropdown List Transition */
+.dropdown-list {
+    height: 0;
     opacity: 0;
-    transform: translateY(-20px);     /* Initially position the dropdown above */
-    transition: opacity 0.4s ease, transform 0.4s ease, height 0.4s ease; /* Transition for height, opacity, and sliding effect */
+    transform: translateY(-20px);
+    transition: opacity 0.4s ease, transform 0.4s ease, height 0.4s ease;
     align-items: center;
     justify-content: center;
-    overflow: hidden;                 /* Ensure nothing overflows */
-    position: relative;               /* Keeps the dropdown in the flow */
+    overflow: hidden;
+    position: relative;
 }
 
-/* When the dropdown list is open, show the content */
 .dropdown-list.open {
-    height: auto;                     /* Let height auto-expand */
-    opacity: 1;                        /* Fade in the list */
-    transform: translateY(0);          /* Slide the dropdown into place */
+    height: auto;
+    opacity: 1;
+    transform: translateY(0);
     background: #393939;
     padding: 4px;
 }
 
-/* Optional: Styling for the transition of the parent container to move together */
+/* Optional: Styling for the transition of the parent container */
 .dropdown-container.open {
-    transform: translateY(0);         /* Slide the entire container into view */
-    transition: transform 0.4s ease;  /* Apply a smooth transition */
+    transform: translateY(0);
+    transition: transform 0.4s ease;
 }
 
-/* The wrapper for each match item (dropdown list) */
-.dropdown-item {
-    display: flex;
-    justify-content: space-between;   /* Space between home team, score, and away team */
-    align-items: center;              /* Vertically align the icons and text */
-    width: 100%;
-    padding: 10px 30px;               /* Padding for spacing inside each item */
-    box-sizing: border-box;           /* Ensures padding doesn't affect width */
-}
-
-/* Home team container (icon + name) */
-.dropdown-item .team {
-    display: flex;
-    align-items: center;              /* Vertically align the icon with the text */
-    justify-content: flex-start;      /* Align home team elements to the left */
-    gap: 8px;                         /* Space between logo and team name */
-}
-
-/* Score section (centered in the entire width of the item) */
-.dropdown-item .score {
-    font-size: 18px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;          /* Center score horizontally */
-    align-items: center;
-    position: absolute;               /* Position it absolutely to the center */
-    left: 50%;                        /* Start from the center of the container */
-    transform: translateX(-50%);      /* Adjust to exactly center it */
-    white-space: nowrap;              /* Ensures score stays in one line */
-    opacity: 0;                       /* Make it hidden initially */
-    transition: opacity 0s;           /* No transition for opacity (instant show/hide) */
-}
-
-/* When the dropdown is open, show the scoreline instantly */
-.dropdown-list.open .dropdown-item .score {
-    opacity: 1;                       /* Show scoreline instantly when open */
-}
-
-/* Away team container (icon + name) */
-.dropdown-item .team.right {
-    display: flex;
-    align-items: center;              /* Vertically align away team icon with the text */
-    justify-content: flex-end;        /* Align away team elements to the right */
-    gap: 8px;                         /* Space between logo and team name */
-}
-
-/* Image styling (team logos) */
-.dropdown-item img {
-    height: 24px;                     /* Standardize icon size */
-    margin-right: 5px;                /* Space between icon and text */
-}
-
-/* Ensure no margin on the headings */
-.dropdown-item h3, .dropdown-item h2 {
-    margin: 0;
-}
-
-/* For the dropdown list itself (apply fading and sliding transition) */
-.dropdown-list {
-    display: flex;
-    flex-direction: column;
-    height: 0;                       /* Set height to 0 initially */
-    opacity: 0;
-    transform: translateY(-20px);     /* Initially position the dropdown above */
-    transition: opacity 0.4s ease, transform 0.4s ease, height 0.4s ease; /* Transition for height, opacity, and sliding effect */
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;                 /* Ensure nothing overflows */
-    position: relative;               /* Keeps the dropdown in the flow */
-}
-
-/* When the dropdown list is open, show the content */
-.dropdown-list.open {
-    height: auto;                     /* Let height auto-expand */
-    opacity: 1;                        /* Fade in the list */
-    transform: translateY(0);          /* Slide the dropdown into place */
-    background: #393939;
-    padding: 4px;
-}
-
-/* Optional: Styling for the transition of the parent container to move together */
-.dropdown-container.open {
-    transform: translateY(0);         /* Slide the entire container into view */
-    transition: transform 0.4s ease;  /* Apply a smooth transition */
-}
-
-  
+/* Hover Effect */
 .dropdown-item:hover {
     background-color: #333333;
 }
-  
+
+/* Maximize row size to 80% on larger screens (larger than tablets) */
+@media screen and (min-width: 768px) {
+    .dropdown-item {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    /* Prevent text from taking 100% width */
+    .team-name h3 {
+        font-size: 22px;
+    }
+    /* Image Styling (team logos) */
+    .dropdown-item img {
+        height: 25px;
+        min-width: 25px;  /* Set minimum width to 25px */
+    }
+}
