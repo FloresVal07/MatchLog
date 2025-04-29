@@ -44,7 +44,7 @@
 }
 
 .matches-header-scroll-container button{
-    color: white;
+    color: #C4C4C4;
     white-space: nowrap;
     background: none;
     border: none;
@@ -53,6 +53,7 @@
 }
 
 .matches-header-scroll-container button:hover{
+    color: white;
     text-decoration: underline;
     text-decoration-color: #5DD1F5;
     text-decoration-thickness: 2.5px;

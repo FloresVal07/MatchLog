@@ -1,0 +1,119 @@
+/*HEADER*/
+.news-header{
+    display: flex;
+    width: 100vw;
+    height: 16.5vh;
+    background-color: #212121;
+    align-items: last baseline;
+    padding: 0px 5px;
+}
+.news-header-title{
+    font-size: 40px;
+    font-weight: bolder;
+}
+/*Edits the box containing the scroll bar*/
+.news-header-scroll-container{
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+    flex-direction: row;
+    gap: 20px;
+    width: calc(100vw - 20px);
+    height: 5vh;
+    background-color: #212121;
+}
+.news-header-scroll-container::-webkit-scrollbar {
+    display: none; /* WebKit */
+}
+.news-header-scroll-container button{
+    color: #C4C4C4;
+    white-space: nowrap;
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+.news-header-scroll-container button:hover{
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: #5DD1F5;
+    text-decoration-thickness: 2.5px;
+    text-underline-offset: 5px;
+    cursor: pointer;
+}
+
+/*BODY*/
+.news-content{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 10px;
+    align-items: center;
+}
+.news-content-most-popular{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.news-content-most-popular-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.news-content-popularity-icon{
+    min-width: 26px;
+    min-height: 16px;
+    width: 2.4vw;
+    height: 1.5vw;
+
+}
+.news-content-popularity-icon-container{
+    display: flex;
+    object-fit: contain;
+    min-width: 36px;
+    min-height: 36px;
+    width: 3.2vw;
+    height: 3.2vw;
+    border-radius: 999px;
+    align-items: center;
+    justify-content: center;
+    background-color: #30332C;
+}
+.news-content-popularity-image{
+    aspect-ratio: 369/266;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+.news-content-most-popular-footer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.news-content-most-popular-footer-text{
+    color: white;
+    width: 100%;
+    max-width: 500px;
+    white-space: normal;
+    word-break: normal;       /* don't break words */
+    overflow-wrap: break-word;
+}
+.news-content-most-popular-footer-citation{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.news-content-most-popular-footer-citation-image{
+    width: 1vw;
+    height: 1vw;
+    min-width: 12px;
+    min-height: 12px;
+    border-radius: 999px;
+}
+.news-content-most-popular-footer-citation-text{
+    font-size: 8px;
+    color: #C4C4C4;
+}

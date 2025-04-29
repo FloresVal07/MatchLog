@@ -8,13 +8,13 @@ import NavBar from "./NavBar.jsx";
 function App() {
   return (
     <Router>
-      <NavBar/>
       <Routes>
         <Route path="/" element={<Matches />} />
         <Route path="/news" element={<News />} />
         <Route path="/leagues" element={<Leagues />} />
         <Route path="/following" element={<Following />} />
       </Routes>
+      <NavBar/>
     </Router>
   );
 }
