@@ -1,10 +1,15 @@
 import "./News.css";
+
+//assets
 import PopularityIcon from "../assets/navBarIcons/PopularityIcon.png";
 import PopularityDownIcon from "../assets/navBarIcons/PopularityDownIcon.png";
-import examplePopularImage from "../assets/maxresdefault.jpg";
-import exampleLeastImage from "../assets/rmaUCL.jpg";
-import exampleNewsCitation from "../assets/31gdOwxg4oL.png";
-import exampleLeastCitation from "../assets/90mins.png";
+import examplePopularImage from "../assets/newsImages/maxresdefault.jpg";
+import exampleLeastImage from "../assets/newsImages/rmaUCL.jpg";
+import exampleNewsCitation from "../assets/newsLogos/31gdOwxg4oL.png";
+import exampleLeastCitation from "../assets/newsLogos/90mins.png";
+import cavan from "../assets/newsImages/cavanNewsHeadline.jpg";
+
+import NewsArticle from "../Components/NewsArticle";
 
 function News(){
     const newsOptions = [
@@ -36,8 +41,7 @@ function News(){
                         <h4 className="news-content-most-popular-footer-text">Europa League News: Harry Maguire the absolute goat scores the last minute winner to put yanited through to the Semi Finals</h4>
                         <div className="news-content-most-popular-footer-citation">
                             <img src={exampleNewsCitation} alt="news citation image" className="news-content-most-popular-footer-citation-image"/>
-                            <h6 className="news-content-most-popular-footer-citation-text">Daily Mail -</h6>
-                            <h6 className="news-content-most-popular-footer-citation-text">1 hour ago</h6>
+                            <h6 className="news-content-most-popular-footer-citation-text">Daily Mail - 1 hour{1 > 1 ? "s" : ""} ago</h6>
                         </div>
                     </div>
                 </div>
@@ -51,13 +55,15 @@ function News(){
                         <h4 className="news-content-most-popular-footer-text">Boring ass glory hunting team wins sum european trophy</h4>
                         <div className="news-content-most-popular-footer-citation">
                             <img src={exampleLeastCitation} alt="news citation image" className="news-content-most-popular-footer-citation-image"/>
-                            <h6 className="news-content-most-popular-footer-citation-text">90 Mins -</h6>
-                            <h6 className="news-content-most-popular-footer-citation-text">20 hours ago</h6>
+                            <h6 className="news-content-most-popular-footer-citation-text">90 mins - 20 hour{20 > 1 ? "s" : ""} ago</h6>
                         </div>
                     </div>
                 </div>
-                <h2>FILLLERR</h2>
-                <h2>FILLLERR</h2>
+                <NewsArticle imgSrc={cavan} articleHeadline="Man City devise record breaking transfer timeline for 15 year old Cavan Sullivan" articleCitationSrc={exampleLeastCitation} articleCitationName="90 mins" articleCitationHours={1}/>
+                <NewsArticle imgSrc={cavan} articleHeadline="Man City devise record breaking transfer timeline for 15 year old Cavan Sullivan" articleCitationSrc={exampleLeastCitation} articleCitationName="90 mins" articleCitationHours={1}/>
+                <NewsArticle imgSrc={cavan} articleHeadline="Man City devise record breaking transfer timeline for 15 year old Cavan Sullivan" articleCitationSrc={exampleLeastCitation} articleCitationName="90 mins" articleCitationHours={1}/>
+                <NewsArticle imgSrc={cavan} articleHeadline="Man City devise record breaking transfer timeline for 15 year old Cavan Sullivan" articleCitationSrc={exampleLeastCitation} articleCitationName="90 mins" articleCitationHours={1}/>
+                <NewsArticle imgSrc={cavan} articleHeadline="Man City devise record breaking transfer timeline for 15 year old Cavan Sullivan" articleCitationSrc={exampleLeastCitation} articleCitationName="90 mins" articleCitationHours={1}/>
             </div>
         </div>
     );

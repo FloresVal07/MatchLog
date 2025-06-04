@@ -9,6 +9,7 @@
 
 /* Dropdown Header */
 .dropdown-header {
+    display: flex;
     background: #212121;
     padding: 12px;
     border-radius: 5px;
@@ -16,11 +17,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 7vh;
+}
+
+.dropdown-header div{
+    display: flex;
+    justify-content: center;
+    align-self: center;
 }
 
 .dropdown-following-icon {
     margin-bottom: 2px;
     margin-right: 5px;
+    height: 2.5vh;
 }
 
 .dropdown-header span {

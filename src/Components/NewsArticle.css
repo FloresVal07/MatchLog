@@ -1,0 +1,18 @@
+/*Smaller news headlines*/
+.news-content-article{
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+    gap: 10px;
+}
+.news-content-article-image{
+    aspect-ratio: 369/266;
+    width: 30%;
+    border-radius: 10px;
+}
+.news-content-article-words{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0px;
+}

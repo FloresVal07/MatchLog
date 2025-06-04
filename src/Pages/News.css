@@ -44,7 +44,7 @@
     cursor: pointer;
 }
 
-/*BODY*/
+/*POPULAR, AND LEAST POPULAR CSS PROPERTIES*/
 .news-content{
     display: flex;
     flex-direction: column;
@@ -85,7 +85,7 @@
 .news-content-popularity-image{
     aspect-ratio: 369/266;
     width: 100%;
-    max-width: 500px;
+    max-width: 550px;
     border-radius: 10px;
 }
 .news-content-most-popular-footer{
@@ -96,7 +96,7 @@
 .news-content-most-popular-footer-text{
     color: white;
     width: 100%;
-    max-width: 500px;
+    max-width: 550px;
     white-space: normal;
     word-break: normal;       /* don't break words */
     overflow-wrap: break-word;

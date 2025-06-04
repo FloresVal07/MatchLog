@@ -3,7 +3,7 @@ import "./MatchesHeader.css"
 import {useState, useRef, useEffect} from "react";
 
 //Assets
-import Logo from "../assets/finalizedLogo-removebg-small.png";
+import Logo from "../assets/websiteLogos/finalizedLogo-removebg-small.png";
 import Calendar from "../assets/navBarIcons/CalendarIcon.png";
 import Clock from "../assets/navBarIcons/ClockIcon.png";
 import Search from "../assets/navBarIcons/SearchIcon.png";
