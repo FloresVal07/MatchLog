@@ -7,7 +7,23 @@ function Following(){
     const newsOptions = [
         {headerText: "Teams"},
         {headerText: "Players"}
-    ]
+    ];
+
+    const followingTeams = [
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+    ];
+
     return(
         <div>
             <div className="following-header">
@@ -25,13 +41,9 @@ function Following(){
             </div>
             <div className="following-content">
                 <div className="following-content-teams">
-                    <h1>Teams</h1>
-                    <h1>Teams</h1>
-                    <h1>Teams</h1>
-                    <h1>Teams</h1>
-                    <h1>Teams</h1>
-                    <h1>Teams</h1>
-                    <BoxedIcon teamName="Barcelona" teamSrc={BarcelonaSrc} teamAlt="Barcelona Logo" nextGame="Next Game: 20/10/2023"/>
+                    {followingTeams.map((team, index) => (
+                        <BoxedIcon key={index} teamName={team.teamName} teamSrc={team.teamSrc} teamAlt={team.teamAlt} nextGameName={team.nextGameName} nextGameDay={team.nextGameDay} nextGameTime={team.nextGameTime} nextGameStadium={team.nextGameStadium} />
+                    ))}
                 </div>
                 <div className="following-content-players">
                     <h1>Players</h1>

@@ -61,7 +61,8 @@
     grid-template-columns: repeat(5, 1fr);
     align-items: center;      /* vertical centering */
     justify-items: center;    /* horizontal centering */
-    padding: 0px 5px;
+    padding: 5px 5px;
+    gap: 5px;
     background-color: pink;
 }
 .following-content-players{
