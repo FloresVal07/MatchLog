@@ -45,20 +45,22 @@
 }
 
 /*Following content*/
-.following-content{
+.following-content {
     display: flex;
     flex-direction: row;
     width: 100vw;
     height: 73.5vh;
-    align-items: last baseline;
+    align-items: flex-start; /* or center, baseline, etc. */
     padding: 0px 5px;
 }
 .following-content-teams{
-    display: flex;
-    flex-direction: column;
+    display: grid;
     width: 50%;
     height: 100%;
-    align-items: last baseline;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;      /* vertical centering */
+    justify-items: center;    /* horizontal centering */
     padding: 0px 5px;
     background-color: pink;
 }
@@ -67,7 +69,7 @@
     flex-direction: column;
     width: 50%;
     height: 100%;
-    align-items: last baseline;
+    align-items: flex-start; /* or center, baseline, etc. */
     padding: 0px 5px;
     background-color: yellow;
 }

@@ -1,8 +1,19 @@
 import "./BoxedIcon.css";
 
-function Icon(){
+import HomeSrc from "../assets/navBarIcons/homeIcon.png";
+import AwaySrc from "../assets/navBarIcons/planeIcon.png"
+
+function Icon({teamName, teamSrc, teamAlt, nextGame}){
     return(
-        <h1>a</h1>
+        <div className="boxed-icon-container">
+            <img src={teamSrc} alt={teamAlt} className="boxed-icon-image" />
+            <h3 className="boxed-icon-title">{teamName}</h3>
+            <div className="boxed-next-game-container">
+                <div className="boxed-next-game-joint">
+                    
+                </div>
+            </div>
+        </div>
     );
 }
 
