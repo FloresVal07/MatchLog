@@ -1,15 +1,20 @@
 import "./Following.css";
 
-import BoxedIcon from "../Components/BoxedIcon.jsx";
+import BoxedIconTeam from "../Components/BoxedIconTeam.jsx";
+import BoxedIconPlayer from "../Components/BoxedIconPlayer.jsx";
 import BarcelonaSrc from "../assets/teamIcons/Barcelona.png";
+import MessiSrc from "../assets/PlayerHeadshots/Messi.png"
+import mlsSrc from "../assets/leagueIcons/mls.png";
 
 function Following(){
+
     const newsOptions = [
         {headerText: "Teams"},
         {headerText: "Players"}
     ];
 
     const followingTeams = [
+        //teamName, teamSrc, teamAlt, nextGameName, nextGameDay, nextGameTime, nextGameStadium
         {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
         {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
         {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
@@ -22,6 +27,29 @@ function Following(){
         {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
         {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
         {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
+    ];
+
+    const followingPlayers = [
+        //playerName, playerSrc, playerAlt, playerGoals, playerAssists, teamSrc, leagueSrc 
+        {playerName: "Lionel Messi", playerSrc: MessiSrc, playerAlt: "Lionel Messi", playerGoals: 30, playerAssists: 10, teamSrc: BarcelonaSrc, leagueSrc: mlsSrc},
+        {playerName: "Lionel Messi", playerSrc: MessiSrc, playerAlt: "Lionel Messi", playerGoals: 30, playerAssists: 10, teamSrc: BarcelonaSrc, leagueSrc: mlsSrc},
+        {playerName: "Lionel Messi", playerSrc: MessiSrc, playerAlt: "Lionel Messi", playerGoals: 30, playerAssists: 10, teamSrc: BarcelonaSrc, leagueSrc: mlsSrc},
+        {playerName: "Lionel Messi", playerSrc: MessiSrc, playerAlt: "Lionel Messi", playerGoals: 30, playerAssists: 10, teamSrc: BarcelonaSrc, leagueSrc: mlsSrc},
+        {playerName: "Lionel Messi", playerSrc: MessiSrc, playerAlt: "Lionel Messi", playerGoals: 30, playerAssists: 10, teamSrc: BarcelonaSrc, leagueSrc: mlsSrc},
+        // Add more players as needed
     ];
 
     return(
@@ -40,13 +68,15 @@ function Following(){
                 </div>
             </div>
             <div className="following-content">
-                <div className="following-content-teams">
+                <div className="following-content-container">
                     {followingTeams.map((team, index) => (
-                        <BoxedIcon key={index} teamName={team.teamName} teamSrc={team.teamSrc} teamAlt={team.teamAlt} nextGameName={team.nextGameName} nextGameDay={team.nextGameDay} nextGameTime={team.nextGameTime} nextGameStadium={team.nextGameStadium} />
+                        <BoxedIconTeam key={index} teamName={team.teamName} teamSrc={team.teamSrc} teamAlt={team.teamAlt} nextGameName={team.nextGameName} nextGameDay={team.nextGameDay} nextGameTime={team.nextGameTime} nextGameStadium={team.nextGameStadium} />
                     ))}
                 </div>
-                <div className="following-content-players">
-                    <h1>Players</h1>
+                <div className="following-content-container" style={{ backgroundColor: "lightblue" }}>
+                    {followingPlayers.map((player, index) => (
+                        <BoxedIconPlayer key={index} playerName={player.playerName} playerSrc={player.playerSrc} playerAlt={player.playerAlt} playerGoals={player.playerGoals} playerAssists={player.playerAssists} teamSrc={player.teamSrc} leagueSrc={player.leagueSrc} />
+                    ))}
                 </div>
             </div>
         </div>

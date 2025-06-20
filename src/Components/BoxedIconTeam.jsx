@@ -1,4 +1,4 @@
-import "./BoxedIcon.css";
+import "./BoxedIconTeam.css";
 
 import HomeSrc from "../assets/navBarIcons/homeIconWhite.png";
 import AwaySrc from "../assets/navBarIcons/planeIconWhite.png"
