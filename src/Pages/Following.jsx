@@ -44,11 +44,11 @@ function Following(){
 
     const followingPlayers = [
         //playerName, playerSrc, playerAlt, playerGoals, playerAssists, teamSrc, leagueSrc 
-        {playerName: "Lionel Messi", playerSrc: MessiSrc, playerAlt: "Lionel Messi", playerGoals: 30, playerAssists: 10, teamSrc: BarcelonaSrc, leagueSrc: mlsSrc},
-        {playerName: "Lionel Messi", playerSrc: MessiSrc, playerAlt: "Lionel Messi", playerGoals: 30, playerAssists: 10, teamSrc: BarcelonaSrc, leagueSrc: mlsSrc},
-        {playerName: "Lionel Messi", playerSrc: MessiSrc, playerAlt: "Lionel Messi", playerGoals: 30, playerAssists: 10, teamSrc: BarcelonaSrc, leagueSrc: mlsSrc},
-        {playerName: "Lionel Messi", playerSrc: MessiSrc, playerAlt: "Lionel Messi", playerGoals: 30, playerAssists: 10, teamSrc: BarcelonaSrc, leagueSrc: mlsSrc},
-        {playerName: "Lionel Messi", playerSrc: MessiSrc, playerAlt: "Lionel Messi", playerGoals: 30, playerAssists: 10, teamSrc: BarcelonaSrc, leagueSrc: mlsSrc},
+        {playerName: "Lionel Messi", playerPos: "Winger", playerSrc: MessiSrc, playerAlt: "Lionel Messi", playerGoals: 30, playerAssists: 10, teamSrc: BarcelonaSrc, leagueSrc: mlsSrc},
+        {playerName: "Lionel Messi", playerPos: "Goalkeeper", playerSrc: MessiSrc, playerAlt: "Lionel Messi", playerGoals: 30, playerAssists: 10, teamSrc: BarcelonaSrc, leagueSrc: mlsSrc},
+        {playerName: "Lionel Messi", playerPos: "Winger", playerSrc: MessiSrc, playerAlt: "Lionel Messi", playerGoals: 30, playerAssists: 10, teamSrc: BarcelonaSrc, leagueSrc: mlsSrc},
+        {playerName: "Lionel Messi", playerPos: "Winger", playerSrc: MessiSrc, playerAlt: "Lionel Messi", playerGoals: 30, playerAssists: 10, teamSrc: BarcelonaSrc, leagueSrc: mlsSrc},
+        {playerName: "Lionel Messi", playerPos: "Goalkeeper", playerSrc: MessiSrc, playerAlt: "Lionel Messi", playerGoals: 30, playerAssists: 10, teamSrc: BarcelonaSrc, leagueSrc: mlsSrc},
         // Add more players as needed
     ];
 
@@ -75,7 +75,7 @@ function Following(){
                 </div>
                 <div className="following-content-container" style={{ backgroundColor: "lightblue" }}>
                     {followingPlayers.map((player, index) => (
-                        <BoxedIconPlayer key={index} playerName={player.playerName} playerSrc={player.playerSrc} playerAlt={player.playerAlt} playerGoals={player.playerGoals} playerAssists={player.playerAssists} teamSrc={player.teamSrc} leagueSrc={player.leagueSrc} />
+                        <BoxedIconPlayer key={index} playerName={player.playerName} playerPos={player.playerPos} playerSrc={player.playerSrc} playerAlt={player.playerAlt} playerGoals={player.playerGoals} playerAssists={player.playerAssists} teamSrc={player.teamSrc} leagueSrc={player.leagueSrc} />
                     ))}
                 </div>
             </div>
