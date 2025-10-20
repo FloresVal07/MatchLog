@@ -1,5 +1,7 @@
 import "./Following.css";
 
+import {useEffect, useState} from "react";
+
 import BoxedIconTeam from "../Components/BoxedIconTeam.jsx";
 import BoxedIconPlayer from "../Components/BoxedIconPlayer.jsx";
 import BarcelonaSrc from "../assets/teamIcons/Barcelona.png";
@@ -7,6 +9,18 @@ import MessiSrc from "../assets/PlayerHeadshots/Messi.png"
 import mlsSrc from "../assets/leagueIcons/mls.png";
 
 function Following(){
+
+    const [clubs, setClubs] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:4000/clubs")
+        .then(res => res.json())
+        .then(data => {
+            console.log("Clubs JSON:", data);    
+            setClubs(data)
+        })
+        .catch(err => console.error("Error fetching clubs:", err));
+    }, []);
 
     const newsOptions = [
         {headerText: "Teams"},
