@@ -3,8 +3,8 @@ import "./Leagues.css";
 import SearchIcon from "../assets/navBarIcons/searchIcon.png";
 import MatchDropdown from "../Components/MatchDropDown.jsx"; 
 
-import ManCity from "../assets/teamIcons/ManchesterCity.png";
-import LeicesterCity from "../assets/teamIcons/LeicesterCity.png";
+const ManCity = "/assets/teamIcons/manchester_city.png";
+const LeicesterCity = "/assets/teamIcons/leicester_city.png";
 
 import LaLiga from "../assets/leagueIcons/laliga-logo-only.png";
 import PremierLeague from "../assets/leagueIcons/premier-league-white.png";

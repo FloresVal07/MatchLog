@@ -1,16 +1,16 @@
 import MatchesHeader from "../Components/MatchesHeader";
 import MatchDropdown from "../Components/MatchDropDown";
-import ManCity from "../assets/teamIcons/ManchesterCity.png";
-import LeicesterCity from "../assets/teamIcons/LeicesterCity.png";
-import Liverpool from "../assets/teamIcons/Liverpool.png";
-import Everton from "../assets/teamIcons/Everton.png";
-import AtleticoMadrid from "../assets/teamIcons/AtleticoMadrid.png";
-import Barcelona from "../assets/teamIcons/Barcelona.png";
-import AcMilan from "../assets/teamIcons/AcMilan.png";
-import InterMilan from "../assets/teamIcons/InterMilan.png";
-import LAFC from "../assets/teamIcons/LAFC.png";
-import InterMiami from "../assets/teamIcons/InterMiami.png";
-import Spain from "../assets/teamIcons/Spain.png";
+const ManCity = "/assets/teamIcons/manchester_city.png";
+const LeicesterCity = "/assets/teamIcons/leicester_city.png";
+const Liverpool = "/assets/teamIcons/liverpool.png";
+const Everton = "/assets/teamIcons/everton.png";
+const AtleticoMadrid = "/assets/teamIcons/atletico_madrid.png";
+const Barcelona = "/assets/teamIcons/barcelona.png";
+const AcMilan = "/assets/teamIcons/ac_milan.png";
+const InterMilan = "/assets/teamIcons/inter_milan.png";
+const LAFC = "/assets/teamIcons/lafc.png";
+const InterMiami = "/assets/teamIcons/inter_miami.png";
+const Spain = "/assets/teamIcons/spain.png";
 import FollowingIcon from "../assets/navBarIcons/FollowingIconFilledIn.png";
 import "./Matches.css";
 
