@@ -83,7 +83,8 @@ function Following(){
                 <div className="following-content-container">
                     {clubs.map((club, index) => (
                         //teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"
-                        <BoxedIconTeam key={index} teamName={club.name} teamSrc={club.clubLogoSrc} teamAlt={`${club.name} Logo`} nextGameName={"Leeds"} nextGameDay={"Sat, Jul 19"} nextGameTime={"06:00"} nextGameStadium={"Home"} />
+                        //Match{id: 1, homeClubName: "Liverpool", awayClubName: "Manchester City", date: "2025-10-17", score: { home: 2, away: 1 } }
+                        <BoxedIconTeam key={index} teamName={club.name} teamSrc={club.clubLogoSrc} teamAlt={`${club.nextMatch.homeClubName} Logo`} nextMatch={club.nextMatch}/>
                     ))}
                 </div>
                 <div className="following-content-container" style={{ backgroundColor: "lightblue" }}>
