@@ -10,6 +10,7 @@ const mlsSrc = "/assets/leagueIcons/mls.png";
 function Following(){
 
     const [clubs, setClubs] = useState([]);
+    const [players, setPlayers] = useState([]);
 
     useEffect(() => {
         fetch("http://localhost:4000/clubs")
@@ -18,50 +19,17 @@ function Following(){
             setClubs(data)
         })
         .catch(err => console.error("Error fetching clubs:", err));
+        fetch("http://localhost:4000/players")
+        .then(res => res.json())
+        .then(data => {   
+            setPlayers(data)
+        })
+        .catch(err => console.error("Error fetching players:", err));
     }, []);
 
     const newsOptions = [
         {headerText: "Teams"},
         {headerText: "Players"}
-    ];
-
-    /*const followingTeams = [
-        //teamName, teamSrc, teamAlt, nextGameName, nextGameDay, nextGameTime, nextGameStadium
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-        {teamName: "Barcelona", teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"},
-    ];*/
-    
-    const followingPlayers = [
-        //playerName, playerSrc, playerAlt, playerGoals, playerAssists, teamSrc, leagueSrc 
-        {playerName: "Lionel Messi", playerPos: "Winger", playerSrc: MessiSrc, playerAlt: "Lionel Messi", playerGoals: 30, playerAssists: 10, teamSrc: "../assets/defaultImage.png", leagueSrc: mlsSrc},
-        {playerName: "Lionel Messi", playerPos: "Goalkeeper", playerSrc: MessiSrc, playerAlt: "Lionel Messi", playerGoals: 30, playerAssists: 10, teamSrc: "../assets/defaultImage.png", leagueSrc: mlsSrc},
-        {playerName: "Lionel Messi", playerPos: "Winger", playerSrc: MessiSrc, playerAlt: "Lionel Messi", playerGoals: 30, playerAssists: 10, teamSrc: "../assets/defaultImage.png", leagueSrc: mlsSrc},
-        {playerName: "Lionel Messi", playerPos: "Winger", playerSrc: MessiSrc, playerAlt: "Lionel Messi", playerGoals: 30, playerAssists: 10, teamSrc: "../assets/defaultImage.png", leagueSrc: mlsSrc},
-        {playerName: "Lionel Messi", playerPos: "Goalkeeper", playerSrc: MessiSrc, playerAlt: "Lionel Messi", playerGoals: 30, playerAssists: 10, teamSrc: "../assets/defaultImage.png", leagueSrc: mlsSrc},
-        // Add more players as needed
     ];
 
     return(
@@ -84,12 +52,12 @@ function Following(){
                     {clubs.map((club, index) => (
                         //teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"
                         //Match{id: 1, homeClubName: "Liverpool", awayClubName: "Manchester City", date: "2025-10-17", score: { home: 2, away: 1 } }
-                        <BoxedIconTeam key={index} teamName={club.name} teamSrc={club.clubLogoSrc} teamAlt={`${club.nextMatch.homeClubName} Logo`} nextMatch={club.nextMatch}/>
+                        <BoxedIconTeam key={index} clubInput={club}/>
                     ))}
                 </div>
                 <div className="following-content-container" style={{ backgroundColor: "lightblue" }}>
-                    {followingPlayers.map((player, index) => (
-                        <BoxedIconPlayer key={index} playerName={player.playerName} playerPos={player.playerPos} playerSrc={player.playerSrc} playerAlt={player.playerAlt} playerGoals={player.playerGoals} playerAssists={player.playerAssists} teamSrc={player.teamSrc} leagueSrc={player.leagueSrc} />
+                    {players.map((player, index) => (
+                        <BoxedIconPlayer key={index} playerInput={player}/>
                     ))}
                 </div>
             </div>

@@ -6,16 +6,18 @@ import MatchDropdown from "../Components/MatchDropDown.jsx";
 const ManCity = "/assets/teamIcons/manchester_city.png";
 const LeicesterCity = "/assets/teamIcons/leicester_city.png";
 
-import LaLiga from "../assets/leagueIcons/laliga-logo-only.png";
-import PremierLeague from "../assets/leagueIcons/premier-league-white.png";
-import championsLeague from "../assets/leagueIcons/champions-league.png";
-import europaLeague from "../assets/leagueIcons/europa-league.png";
-import copaAmerica from "../assets/leagueIcons/copa-america.png";
-import euros from "../assets/leagueIcons/euros.png";
-import worldCup from "../assets/leagueIcons/world-cup.png";
-import ligueUr from "../assets/leagueIcons/ligue-1.png";
-import bundesliga from "../assets/leagueIcons/bundesliga.png";
-import serieA from "../assets/leagueIcons/serie-a.png";
+const LaLiga = "/assets/leagueIcons/la_liga.png";
+const PremierLeague = "/assets/leagueIcons/premier_league_white.png";
+const championsLeague = "/assets/leagueIcons/champions_league.png";
+const europaLeague = "/assets/leagueIcons/europa_league.png";
+const copaAmerica = "/assets/leagueIcons/copa_america.png";
+const euros = "/assets/leagueIcons/euros.png";
+const worldCup = "/assets/leagueIcons/world_cup.png";
+const ligueUr = "/assets/leagueIcons/ligue_1.png";
+const bundesliga = "/assets/leagueIcons/bundesliga.png";
+const serieA = "/assets/leagueIcons/serie_a.png";
+
+
 
 function Following() {
     const [search, setSearch] = useState("");
