@@ -4,6 +4,7 @@ import HomeSrc from "../assets/navBarIcons/homeIconWhite.png";
 import AwaySrc from "../assets/navBarIcons/planeIconWhite.png"
 
 function Icon({clubInput}){
+    console.log(clubInput);
     const convertToFileSyntax = (inputName) => {
         return inputName.toLowerCase().replace(/\s+/g, "_");
     };
@@ -15,13 +16,21 @@ function Icon({clubInput}){
                 e.target.src = "/assets/defaultImage.png"; // or another valid path
             }}/>
             <h3 className="boxed-icon-title">{clubInput.name}</h3>
-            <div className="boxed-next-game-container">
-                <div className="boxed-next-game-joint">
-                    <img src={clubInput.nextMatch.gameStadium === "Home" ? HomeSrc : AwaySrc} alt="Home Icon" className="boxed-next-game-icon" />
-                    <h3 className="boxed-next-game-text">{clubInput.nextMatch.awayClubName}</h3>
+            {clubInput.nextGame && (
+                <div className="boxed-next-game-container">
+                    <div className="boxed-next-game-joint">
+                    <img
+                        src={clubInput.nextGame.gameStadium === "Home" ? HomeSrc : AwaySrc}
+                        alt="Home Icon"
+                        className="boxed-next-game-icon"
+                    />
+                    <h3 className="boxed-next-game-text">{clubInput.nextGame.awayClub.name}</h3>
+                    </div>
+                    <h3 className="boxed-next-game-subtext">
+                    {clubInput.nextGame.date} at {clubInput.nextGame.time}
+                    </h3>
                 </div>
-                <h3 className="boxed-next-game-subtext">{clubInput.nextMatch.date} at {clubInput.nextMatch.time}</h3>
-            </div>
+                )}
         </div>
     );
 }
