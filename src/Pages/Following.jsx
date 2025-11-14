@@ -52,11 +52,13 @@ function Following(){
                     {clubs.map((club, index) => (
                         //teamSrc: BarcelonaSrc, teamAlt: "Barcelona Logo", nextGameName: "Leeds", nextGameDay: "Sat, Jul 19", nextGameTime: "06:00", nextGameStadium: "Home"
                         //Match{id: 1, homeClubName: "Liverpool", awayClubName: "Manchester City", date: "2025-10-17", score: { home: 2, away: 1 } }
+                        console.log(club),
                         <BoxedIconTeam key={index} clubInput={club}/>
                     ))}
                 </div>
                 <div className="following-content-container" style={{ backgroundColor: "lightblue" }}>
                     {players.map((player, index) => (
+                        console.log(player),
                         <BoxedIconPlayer key={index} playerInput={player}/>
                     ))}
                 </div>

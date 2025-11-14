@@ -4,7 +4,6 @@ import HomeSrc from "../assets/navBarIcons/homeIconWhite.png";
 import AwaySrc from "../assets/navBarIcons/planeIconWhite.png"
 
 function Icon({clubInput}){
-    console.log(clubInput);
     const convertToFileSyntax = (inputName) => {
         return inputName.toLowerCase().replace(/\s+/g, "_");
     };

@@ -12,7 +12,7 @@ function Icon({playerInput}) {
     
     const playerSrc = `/assets/playerIcons/${convertToFileSyntax(playerInput.name)}.png`;
     const teamSrc = `/assets/teamIcons/${convertToFileSyntax(playerInput.club.name)}.png`;
-    const leagueSrc = `/assets/leagueIcons/${convertToFileSyntax(playerInput.club.league.name)}.png`;
+    const leagueSrc = (playerInput.club.league != null ? `/assets/leagueIcons/${convertToFileSyntax(playerInput.club.league.name)}.png` : `/assets/defaultImage.png`);
 
     const [firstName, lastName] = playerInput.name.split(" ");
     
