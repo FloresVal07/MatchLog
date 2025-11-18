@@ -1,14 +1,14 @@
 import "./BoxedIconPlayer.css";
+import {convertToFileSyntax} from "./utils.js";
+
 import Gloves from "../assets/navBarIcons/Gloves.png"
 import CleanSheets from "../assets/navBarIcons/CleanSheet.png";
 import AssistIcon from "../assets/navBarIcons/25036-200-white.png";
 import GoalIcon from "../assets/navBarIcons/Goals.png";
 import MatchesPlayedIcon from "../assets/navBarIcons/MatchesPlayedIcon.png";
+
 //id: 1, name: "Mohamed Salah", age: 31, position: "Forward", club: Club[0] 
 function Icon({playerInput}) {
-    const convertToFileSyntax = (inputName) => {
-        return inputName.toLowerCase().replace(/\s+/g, "_");
-    };
     
     const playerSrc = `/assets/playerIcons/${convertToFileSyntax(playerInput.name)}.png`;
     const teamSrc = `/assets/teamIcons/${convertToFileSyntax(playerInput.club.name)}.png`;

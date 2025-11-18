@@ -1,5 +1,8 @@
 import React, { useState } from "react";
+import { DataContext } from "../context/DataContext.jsx";
 import "./Leagues.css";
+
+
 import SearchIcon from "../assets/navBarIcons/searchIcon.png";
 import MatchDropdown from "../Components/MatchDropDown.jsx"; 
 
@@ -37,6 +40,7 @@ function Following() {
         },
     ];
 
+    /*
     // Array of leagues
     const leagues = [
         { headerTitle: "La Liga", headerImageSrc: LaLiga, aliases: ["laliga", "spanish league"], headerImageAlt: "La Liga Logo", matches: laLigaMatches },
@@ -50,13 +54,19 @@ function Following() {
         { headerTitle: "Bundesliga", headerImageSrc: bundesliga, aliases: ["germany", "german league"], headerImageAlt: "Bundesliga Logo", matches: laLigaMatches },
         { headerTitle: "Serie A", headerImageSrc: serieA, aliases: ["scudetto", "italian league"], headerImageAlt: "Serie A Logo", matches: laLigaMatches },
         { headerTitle: "Padder", headerImageSrc: "", headerImageAlt: "Padder League", matches: laLigaMatches}
-    ];
+    ];*/
+
+    const {leagues} = React.useContext(DataContext);
+
+    leagues.map(league => {
+        league.matches = laLigaMatches;
+    });
 
     // Filter leagues by search input
     const filteredLeagues = leagues.filter(league => {
         const searchTerm = search.toLowerCase();
         return (
-            league.headerTitle.toLowerCase().includes(searchTerm) ||
+            league.name.toLowerCase().includes(searchTerm) ||
             (league.aliases && league.aliases.some(alias => alias.includes(searchTerm)))
         );
     });
@@ -79,13 +89,13 @@ function Following() {
                 </div>
             </div>
             <div className="leagues-content-container">
-                {filteredLeagues.map(league => (
+                {console.log(filteredLeagues)}
+                {
+                filteredLeagues.map(league => (
                     <MatchDropdown
-                        key={league.headerTitle}
+                        key={league.name}
+                        leagueInstance={league}
                         matches={league.matches}
-                        headerTitle={league.headerTitle}
-                        headerImageSrc={league.headerImageSrc}
-                        headerImageAlt={league.headerImageAlt}
                     />
                 ))}
             </div>

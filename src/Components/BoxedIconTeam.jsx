@@ -1,12 +1,11 @@
 import "./BoxedIconTeam.css";
+import {convertToFileSyntax} from "./utils.js";
 
 import HomeSrc from "../assets/navBarIcons/homeIconWhite.png";
 import AwaySrc from "../assets/navBarIcons/planeIconWhite.png"
 
 function Icon({clubInput}){
-    const convertToFileSyntax = (inputName) => {
-        return inputName.toLowerCase().replace(/\s+/g, "_");
-    };
+
     const teamSrc = `/assets/teamIcons/${convertToFileSyntax(clubInput.name)}.png`;
     return(
         <div className="boxed-icon-container">

@@ -1,10 +1,14 @@
 import { useState } from "react";
+import { convertToFileSyntax } from "./utils.js";
 import "./MatchDropDown.css";
 import DropDownArrow from "../assets/navBarIcons/DropDownArrowIcon.png";
 
-const MatchDropdown = ({matches, headerTitle, headerImageSrc, headerImageAlt}) => {
+const MatchDropdown = ({leagueInstance, matches}) => {
+
   const [isOpen, setIsOpen] = useState(false);
   const [selectedMatch, setSelectedMatch] = useState(null);
+
+  const headerImageSrc = `/assets/leagueIcons/${convertToFileSyntax(leagueInstance.name)}.png`;
 
   const handleSelect = (match) => {
     setSelectedMatch(match);
@@ -17,13 +21,13 @@ const MatchDropdown = ({matches, headerTitle, headerImageSrc, headerImageAlt}) =
             <div>
                 <img
                     src={headerImageSrc} // just one image pointing down
-                    alt={headerImageAlt}
+                    alt={`${leagueInstance.name} Logo`}
                     className="dropdown-following-icon"
                 />
                 <span>
                     {selectedMatch
                     ? `${selectedMatch.home} vs ${selectedMatch.away} (${selectedMatch.date})`
-                    : headerTitle}
+                    : leagueInstance.name}
                 </span>
             </div>
             <div className="drop-down-arrow-container">
