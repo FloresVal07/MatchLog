@@ -25,42 +25,7 @@ const serieA = "/assets/leagueIcons/serie_a.png";
 function Following() {
     const [search, setSearch] = useState("");
 
-    const laLigaMatches = [
-        {
-            id: 1,
-            home: "Manchester City",
-            homeSrc: ManCity,
-            homeAlt: "Manchester City Crest",
-            away: "Leicester City",
-            awaySrc: LeicesterCity,
-            awayAlt: "Leicester Crest",
-            score: "2 - 0",
-            date: "2025-04-10",
-            fullTime: true
-        },
-    ];
-
-    /*
-    // Array of leagues
-    const leagues = [
-        { headerTitle: "La Liga", headerImageSrc: LaLiga, aliases: ["laliga", "spanish league"], headerImageAlt: "La Liga Logo", matches: laLigaMatches },
-        { headerTitle: "Premier League", headerImageSrc: PremierLeague, aliases: ["england", "english league"], headerImageAlt: "Premier League Logo", matches: laLigaMatches },
-        { headerTitle: "Champions League", headerImageSrc: championsLeague, aliases: ["ucl", "european trophy", "Europe"], headerImageAlt: "Champions League Logo", matches: laLigaMatches },
-        { headerTitle: "Europa League", headerImageSrc: europaLeague, aliases: ["shit ass league"], headerImageAlt: "Europa League Logo", matches: laLigaMatches },
-        { headerTitle: "Copa America", headerImageSrc: copaAmerica, aliases: ["America", "Copa"], headerImageAlt: "Copa America Logo", matches: laLigaMatches },
-        { headerTitle: "Euros", headerImageSrc: euros, aliases: ["Europe"], headerImageAlt: "Euro League Logo", matches: laLigaMatches },
-        { headerTitle: "World Cup", headerImageSrc: worldCup, aliases: ["Mundial", "worldcup"], headerImageAlt: "World Cup Logo", matches: laLigaMatches },
-        { headerTitle: "Ligue One", headerImageSrc: ligueUr, aliases: ["france", "french league"], headerImageAlt: "Ligue One Logo", matches: laLigaMatches },
-        { headerTitle: "Bundesliga", headerImageSrc: bundesliga, aliases: ["germany", "german league"], headerImageAlt: "Bundesliga Logo", matches: laLigaMatches },
-        { headerTitle: "Serie A", headerImageSrc: serieA, aliases: ["scudetto", "italian league"], headerImageAlt: "Serie A Logo", matches: laLigaMatches },
-        { headerTitle: "Padder", headerImageSrc: "", headerImageAlt: "Padder League", matches: laLigaMatches}
-    ];*/
-
     const {leagues} = React.useContext(DataContext);
-
-    leagues.map(league => {
-        league.matches = laLigaMatches;
-    });
 
     // Filter leagues by search input
     const filteredLeagues = leagues.filter(league => {

@@ -43,19 +43,46 @@ const MatchDropdown = ({leagueInstance, matches}) => {
                 />
             </div>
         </div>
+      {
+        /**
+             *  id: 1,
+                home: "Manchester City",
+                homeSrc: ManCity,
+                homeAlt: "Manchester City Crest",
+                away: "Leicester City",
+                awaySrc: LeicesterCity,
+                awayAlt: "Leicester Crest",
+                score: "2 - 0",
+                date: "2025-04-10",
+                fullTime: true             
+             * 
+             *  score	
+                    home	0
+                    away	0
+                _id	"691fc63665c30fa820a66ee0"
+                name	"São Paulo FC vs SC Recife"
+                homeClub	"691fc63565c30fa820a66052"
+                awayClub	"691fc63565c30fa820a66054"
+                league	"691fc63565c30fa820a66042"
+                stadium	"Estádio do Morumbi"
+                date	"2025-03-29"
+                time	"21:30:00"
+                events	[]
+             */
+      }
       <div className={`dropdown-list ${isOpen ? "open" : ""}`}>
         {matches.map((match) => (
-          <div className="dropdown-item" key={match.id} onClick={() => handleSelect(match)}>
+          <div className="dropdown-item" key={match._id} onClick={() => handleSelect(match)}>
             <div className="team">
-              <img src={match.homeSrc} alt={`${match.home} logo`} />
-              <div className="team-name"><h3>{match.home}</h3></div>
+              <img src={`/assets/leagueIcons/${convertToFileSyntax(match.homeClub.name)}.png`} alt={`${match.homeClub.name} logo`} />
+              <div className="team-name"><h3>{match.homeClub.name}</h3></div>
             </div>
             <div className="score">
-                <h2>{match.score}</h2>
+                <h2>{match.score.home} : {match.score.away}</h2>
             </div>
             <div className="team right">
-              <img src={match.awaySrc} alt={`${match.away} logo`} />
-              <div className="team-name"><h3>{match.away}</h3></div>
+              <img src={`/assets/teamIcons/${convertToFileSyntax(match.awayClub.name)}.png`} alt={`${match.awayClub.name} logo`} />
+              <div className="team-name"><h3>{match.awayClub.name}</h3></div>
             </div>
           </div>))}
       </div>
