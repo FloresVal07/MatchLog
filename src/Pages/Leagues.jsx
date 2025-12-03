@@ -2,27 +2,11 @@ import React, { useState } from "react";
 import { DataContext } from "../context/DataContext.jsx";
 import "./Leagues.css";
 
-
 import SearchIcon from "../assets/navBarIcons/searchIcon.png";
 import MatchDropdown from "../Components/MatchDropDown.jsx"; 
 
-const ManCity = "/assets/teamIcons/manchester_city.png";
-const LeicesterCity = "/assets/teamIcons/leicester_city.png";
 
-const LaLiga = "/assets/leagueIcons/la_liga.png";
-const PremierLeague = "/assets/leagueIcons/premier_league_white.png";
-const championsLeague = "/assets/leagueIcons/champions_league.png";
-const europaLeague = "/assets/leagueIcons/europa_league.png";
-const copaAmerica = "/assets/leagueIcons/copa_america.png";
-const euros = "/assets/leagueIcons/euros.png";
-const worldCup = "/assets/leagueIcons/world_cup.png";
-const ligueUr = "/assets/leagueIcons/ligue_1.png";
-const bundesliga = "/assets/leagueIcons/bundesliga.png";
-const serieA = "/assets/leagueIcons/serie_a.png";
-
-
-
-function Following() {
+function Leagues() {
     const [search, setSearch] = useState("");
 
     const {leagues} = React.useContext(DataContext);
@@ -68,4 +52,4 @@ function Following() {
     );
 }
 
-export default Following;
+export default Leagues;

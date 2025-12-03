@@ -7,8 +7,6 @@ export const DataContext = createContext();
 export const DataProvider = ({ children }) => {
   const [leagues, setLeagues] = useState([]);
   const [clubs, setClubs] = useState([]);
-  const [players, setPlayers] = useState([]);
-  const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -16,13 +14,9 @@ export const DataProvider = ({ children }) => {
       try {
         const leaguesRes = await axios.get("http://localhost:4000/leagues");
         const clubsRes = await axios.get("http://localhost:4000/clubs");
-        const playersRes = await axios.get("http://localhost:4000/players");
-        const matchesRes = await axios.get("http://localhost:4000/matches");
 
         setLeagues(leaguesRes.data);
         setClubs(clubsRes.data);
-        setPlayers(playersRes.data);
-        setMatches(matchesRes.data);
 
         setLoading(false);
       } catch (err) {
@@ -35,7 +29,7 @@ export const DataProvider = ({ children }) => {
 
   return (
     <DataContext.Provider
-      value={{ leagues, clubs, players, matches, loading }}
+      value={{ leagues, clubs, loading }}
     >
       {children}
     </DataContext.Provider>

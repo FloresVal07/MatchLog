@@ -4,8 +4,6 @@ import {useContext} from "react";
 
 import BoxedIconTeam from "../Components/BoxedIconTeam.jsx";
 import BoxedIconPlayer from "../Components/BoxedIconPlayer.jsx";
-const MessiSrc = "/assets/PlayerHeadshots/Messi.png"
-const mlsSrc = "/assets/leagueIcons/mls.png";
 
 function Following() {
   const { clubs, players, loading } = useContext(DataContext);
