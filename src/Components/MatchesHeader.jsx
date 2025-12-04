@@ -63,6 +63,8 @@ function MatchesHeader(){
 
     const {firstHalf, middle, secondHalf} = generateDates(centerDate, 20, 20);
 
+    //console.log(`Todays Date: ${centerDate.toISOString().slice(0,10)}`);
+
     return(
 
         <div>
