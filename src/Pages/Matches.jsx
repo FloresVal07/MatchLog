@@ -11,8 +11,6 @@ import Search from "../assets/navBarIcons/SearchIcon.png";
 
 function Matches() {
   // will be fetched from the frontend later
-  const todaysDate = "2025-09-20";
-
   const [matches, setMatches] = useState([]);
   const [loading, setLoading] = useState(true);
   const [centerDate, setCenterDate] = useState(new Date());
@@ -25,7 +23,7 @@ function Matches() {
     const fetchData = async () => {
       try {
         const matchesRes = await axios.get(
-          `http://localhost:4000/matches/date/${todaysDate}`
+          `http://localhost:4000/matches/date/${centerDate.toISOString().split("T")[0]}`
         );
         setMatches(matchesRes.data);
         setLoading(false);
@@ -34,7 +32,7 @@ function Matches() {
       }
     };
     fetchData();
-  }, []);
+  }, [centerDate]);
 
   // Auto-scroll effect
   useEffect(() => {
@@ -92,17 +90,19 @@ function Matches() {
         ref={scrollContainerRef}
       >
         {firstHalf.map((date, index) => (
-          <button key={`first-${index}`}>
+          <button key={`first-${index}`} onClick={() => setCenterDate(date)}>
             {date.toLocaleDateString("en-US", { month: "short", day: "numeric" })}
           </button>
         ))}
         <div className="matches-header-scroll-middle-container">
           {middle.map((date, index) => (
-            <button key={`middle-${index}`}>{date.text}</button>
+            <button key={`middle-${index}`} onClick={() => setCenterDate(date)}>
+              {date.toLocaleDateString("en-US", { month: "short", day: "numeric" })}
+            </button>
           ))}
         </div>
         {secondHalf.map((date, index) => (
-          <button key={`second-${index}`}>
+          <button key={`second-${index}`} onClick={() => setCenterDate(date)}>
             {date.toLocaleDateString("en-US", { month: "short", day: "numeric" })}
           </button>
         ))}
