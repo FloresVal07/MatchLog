@@ -8,7 +8,7 @@ import GoalIcon from "../assets/navBarIcons/Goals.png";
 import MatchesPlayedIcon from "../assets/navBarIcons/MatchesPlayedIcon.png";
 
 //id: 1, name: "Mohamed Salah", age: 31, position: "Forward", club: Club[0] 
-function Icon({playerInput}) {
+function Icon({playerInput, onClick}) {
     
     const playerSrc = `/assets/playerIcons/${convertToFileSyntax(playerInput.name)}.png`;
     const teamSrc = `/assets/teamIcons/${convertToFileSyntax(playerInput.club.name)}.png`;
@@ -17,7 +17,7 @@ function Icon({playerInput}) {
     const [firstName, lastName] = playerInput.name.split(" ");
     
     return(
-        <div className="boxed-icon-container">
+        <div className="boxed-icon-container" onClick={() => onClick(playerInput)}>
             <div className="boxed-icon-image-container">
                 <img src={playerSrc} alt={`Headshot Image of ${playerInput.name}`} className="boxed-icon-player-image" />
                 <img src={leagueSrc} alt="League Icon" className="boxed-icon-team-image" />

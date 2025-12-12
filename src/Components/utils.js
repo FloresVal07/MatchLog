@@ -2,6 +2,10 @@ const convertToFileSyntax = (inputName) => {
     return inputName.toLowerCase().replace(/\s+/g, "_");
 };
 
+const convertToCompactLowercase = (inputName) => {
+    return inputName.toLowerCase().replace(/\s+/g, "");
+};
+
 const generateDates = (center, past, future) => {
     const firstHalf = [];
     const secondHalf = [];
@@ -38,4 +42,4 @@ const generateDates = (center, past, future) => {
     };
 };
 
-export {generateDates, convertToFileSyntax };
+export {generateDates, convertToFileSyntax, convertToCompactLowercase};

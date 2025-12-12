@@ -2,8 +2,8 @@ import { useRef, useEffect, useState } from "react";
 import { generateDates } from "../Components/utils.js";
 import "./Matches.css";
 import MatchDropDownBarebones from "../Components/MatchDropDownBarebones.jsx";
+import LoadingPage from "../Components/LoadingPage.jsx";
 import axios from "axios";
-
 import Logo from "../assets/websiteLogos/finalizedLogo-removebg-small.png";
 import Calendar from "../assets/navBarIcons/CalendarIcon.png";
 import Clock from "../assets/navBarIcons/ClockIcon.png";
@@ -20,6 +20,7 @@ function Matches() {
 
   // Fetch matches
   useEffect(() => {
+    console.log("FETCHED MATCHES FOR : ", centerDate.toISOString().split("T")[0]);
     const fetchData = async () => {
       try {
         const matchesRes = await axios.get(
@@ -71,9 +72,9 @@ function Matches() {
   }));
 
   return loading ? (
-    <p>Loading data...</p>
-  ) : (
-    <div className="match-body-container">
+      <LoadingPage text={"Loading matches"}/>
+    ) : (
+      <div className="match-body-container">
       {/* Header */}
       <div className="matches-header-container">
         <img src={Logo} alt="Logo" />
@@ -108,16 +109,22 @@ function Matches() {
         ))}
       </div>
 
-      <h1>Matches</h1>
-      {groupedLeagues.map((league) => (
-        <MatchDropDownBarebones
-          key={league.name}
-          leagueName={league.name}
-          matches={league.matches}
-        />
-      ))}
-    </div>
-  );
+      {groupedLeagues.length === 0 ? (
+        <h1>No matches found for {centerDate.toLocaleDateString("en-US", { month: "short", day: "numeric" })}</h1>
+      ) : (
+        <>
+          <h1>Matches {centerDate.toLocaleDateString("en-US", { month: "short", day: "numeric" })}</h1>
+          {groupedLeagues.map((league) => (
+            <MatchDropDownBarebones
+              key={league.name}
+              leagueName={league.name}
+              matches={league.matches}
+            />
+          ))}
+        </>
+      )}
+      </div>
+    );
 }
 
 export default Matches;

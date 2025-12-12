@@ -1,27 +1,37 @@
 import React, { useState } from "react";
 import { DataContext } from "../context/DataContext.jsx";
+import { convertToCompactLowercase } from "../Components/utils.js";
 import "./Leagues.css";
 
 import SearchIcon from "../assets/navBarIcons/searchIcon.png";
 import MatchDropdown from "../Components/MatchDropDown.jsx"; 
-
+import LoadingPage from "../Components/LoadingPage.jsx";
 
 function Leagues() {
     const [search, setSearch] = useState("");
+    const leagueAliasMap = {
+        "Bundesliga": ["German Bundesliga", "BL", "Germany League"].map(convertToCompactLowercase),
+        "Serie A": ["Italian Serie A", "Italy Top League", "Calcio"].map(convertToCompactLowercase),
+        "Primeira Liga": ["Portuguese Primeira Liga", "Portugal League", "Liga Portugal"].map(convertToCompactLowercase),
+        "Primera Division": ["La Liga", "Spanish Primera Division", "Liga Española", "LaLiga"].map(convertToCompactLowercase)
+    };
 
-    const {leagues} = React.useContext(DataContext);
+    const {leagues, loading} = React.useContext(DataContext);
 
     // Filter leagues by search input
     const filteredLeagues = leagues.filter(league => {
-        const searchTerm = search.toLowerCase();
+        const searchTerm = convertToCompactLowercase(search);
         return (
             league.name.toLowerCase().includes(searchTerm) ||
-            (league.aliases && league.aliases.some(alias => alias.includes(searchTerm)))
+            (leagueAliasMap[league.name] && leagueAliasMap[league.name].some(alias => alias.includes(searchTerm)))
         );
     });
 
     return (
-        <div className="leagues-body-container">
+        loading ? (
+            <LoadingPage text={"Loading leagues"}/>
+        ) : ( 
+            <div className="leagues-body-container">
             <div className="leagues-header">
                 <div className="leagues-header-container">
                     <h1 className="leagues-header-title">Leagues</h1>
@@ -49,6 +59,7 @@ function Leagues() {
                 ))}
             </div>
         </div>
+        )
     );
 }
 

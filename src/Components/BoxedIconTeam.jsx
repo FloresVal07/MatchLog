@@ -4,11 +4,11 @@ import {convertToFileSyntax} from "./utils.js";
 import HomeSrc from "../assets/navBarIcons/homeIconWhite.png";
 import AwaySrc from "../assets/navBarIcons/planeIconWhite.png"
 
-function Icon({clubInput}){
+function Icon({clubInput, onClick}){
 
     const teamSrc = `/assets/teamIcons/${convertToFileSyntax(clubInput.name)}.png`;
     return(
-        <div className="boxed-icon-container">
+        <div className="boxed-icon-container" onClick={() => onClick(clubInput)}>
             <img src={teamSrc} alt={clubInput.name} className="boxed-icon-image" onError={(e) => {
                 console.error(`Image not found for ${clubInput.name}: ${teamSrc}`);
                 e.target.src = "/assets/defaultImage.png"; // or another valid path
