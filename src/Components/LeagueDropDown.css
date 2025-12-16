@@ -1,0 +1,81 @@
+/*//dropdown-container, dropdown-header, dropdown-following-icon, dropdown-list*/
+/* Dropdown Container */
+.dropdown-container {
+    position: relative;
+    width: calc(100vw - 20px);
+    margin-left: 10px;
+    font-family: sans-serif;
+    color: white;
+}
+
+/* Dropdown Header */
+.dropdown-header {
+    display: flex;
+    background: #212121;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 7vh;
+}
+
+.dropdown-header div{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+}
+
+.dropdown-following-icon {
+    margin-bottom: 2px;
+    margin-right: 5px;
+    height: 2.5vh;
+}
+
+.dropdown-header span {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Dropdown List */
+.dropdown-list {
+    display: flex;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+/* Dropdown List Transition */
+.dropdown-list {
+    height: 0;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.4s ease, transform 0.4s ease, height 0.4s ease;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Maximize row size to 80% on larger screens (larger than tablets) */
+@media screen and (min-width: 768px) {
+    .dropdown-item {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+    /* Prevent text from taking 100% width */
+    .team-name h3 {
+        font-size: 22px;
+    }
+    /* Image Styling (team logos) */
+    .dropdown-item img {
+        height: 25px;
+        min-width: 25px;  /* Set minimum width to 25px */
+    }
+}

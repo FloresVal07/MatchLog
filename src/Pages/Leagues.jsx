@@ -4,7 +4,7 @@ import { convertToCompactLowercase } from "../Components/utils.js";
 import "./Leagues.css";
 
 import SearchIcon from "../assets/navBarIcons/searchIcon.png";
-import MatchDropdown from "../Components/MatchDropDown.jsx"; 
+import LeagueDropDown from "../Components/LeagueDropDown.jsx"; 
 import LoadingPage from "../Components/LoadingPage.jsx";
 
 function Leagues() {
@@ -48,14 +48,8 @@ function Leagues() {
                 </div>
             </div>
             <div className="leagues-content-container">
-                {console.log(filteredLeagues)}
-                {
-                filteredLeagues.map(league => (
-                    <MatchDropdown
-                        key={league.name}
-                        leagueInstance={league}
-                        matches={league.matches}
-                    />
+                {filteredLeagues.map(league => (
+                    <LeagueDropDown key={league.name} leagueInstance={league} matches={league.matches} />
                 ))}
             </div>
         </div>

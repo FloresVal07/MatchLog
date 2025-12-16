@@ -1,0 +1,886 @@
+[
+  {
+    "name": "Germán Cano",
+    "clubName": "Fluminense FC",
+    "position": "F",
+    "positionsDetailed": [
+      "ST"
+    ],
+    "number": 14,
+    "nationality": "Argentina",
+    "age": 37,
+    "height": 176,
+    "foot": "Right",
+    "value": 620000
+  },
+  {
+    "name": "John Kennedy",
+    "clubName": "Fluminense FC",
+    "position": "F",
+    "positionsDetailed": [
+      "ST"
+    ],
+    "number": 99,
+    "nationality": "Brazil",
+    "age": 23,
+    "height": 173,
+    "foot": "Right",
+    "value": 5800000
+  },
+  {
+    "name": "Everaldo",
+    "clubName": "Fluminense FC",
+    "position": "F",
+    "positionsDetailed": [
+      "ST"
+    ],
+    "number": 9,
+    "nationality": "Brazil",
+    "age": 34,
+    "height": 181,
+    "foot": "Right",
+    "value": 435000
+  },
+  {
+    "name": "Joaquín Lavega",
+    "clubName": "Fluminense FC",
+    "position": "F",
+    "positionsDetailed": [
+      "LW"
+    ],
+    "number": 19,
+    "nationality": "Uruguay",
+    "age": 20,
+    "height": 172,
+    "foot": "Left",
+    "value": 3000000
+  },
+  {
+    "name": "Yeferson Soteldo",
+    "clubName": "Fluminense FC",
+    "position": "M",
+    "positionsDetailed": [
+      "LW"
+    ],
+    "number": 7,
+    "nationality": "Venezuela",
+    "age": 28,
+    "height": 160,
+    "foot": "Right",
+    "value": 3700000
+  },
+  {
+    "name": "Matheus Martinelli",
+    "clubName": "Fluminense FC",
+    "position": "M",
+    "positionsDetailed": [
+      "MC",
+      "DM"
+    ],
+    "number": 8,
+    "nationality": "Brazil",
+    "age": 24,
+    "height": 176,
+    "foot": "Right",
+    "value": 14400000
+  },
+  {
+    "name": "Ganso",
+    "clubName": "Fluminense FC",
+    "position": "M",
+    "positionsDetailed": [
+      "AM"
+    ],
+    "number": 10,
+    "nationality": "Brazil",
+    "age": 36,
+    "height": 184,
+    "foot": "Left",
+    "value": 335000
+  },
+  {
+    "name": "Kevin Serna",
+    "clubName": "Fluminense FC",
+    "position": "M",
+    "positionsDetailed": [
+      "RW",
+      "LW"
+    ],
+    "number": 90,
+    "nationality": "Colombia",
+    "age": 28,
+    "height": 181,
+    "foot": "Right",
+    "value": 3100000
+  },
+  {
+    "name": "Luciano Acosta",
+    "clubName": "Fluminense FC",
+    "position": "M",
+    "positionsDetailed": [
+      "AM"
+    ],
+    "number": 32,
+    "nationality": "Argentina",
+    "age": 31,
+    "height": 160,
+    "foot": "Right",
+    "value": 4800000
+  },
+  {
+    "name": "Agustín Canobbio",
+    "clubName": "Fluminense FC",
+    "position": "M",
+    "positionsDetailed": [
+      "LW",
+      "RW"
+    ],
+    "number": 17,
+    "nationality": "Uruguay",
+    "age": 27,
+    "height": 175,
+    "foot": "Right",
+    "value": 6200000
+  },
+  {
+    "name": "Hércules",
+    "clubName": "Fluminense FC",
+    "position": "M",
+    "positionsDetailed": [
+      "MC",
+      "DM"
+    ],
+    "number": 35,
+    "nationality": "Brazil",
+    "age": 25,
+    "height": 178,
+    "foot": "Right",
+    "value": 10300000
+  },
+  {
+    "name": "Keno",
+    "clubName": "Fluminense FC",
+    "position": "M",
+    "positionsDetailed": [
+      "LW"
+    ],
+    "number": 11,
+    "nationality": "Brazil",
+    "age": 36,
+    "height": 174,
+    "foot": "Right",
+    "value": 390000
+  },
+  {
+    "name": "Facundo Bernal",
+    "clubName": "Fluminense FC",
+    "position": "M",
+    "positionsDetailed": [
+      "MC",
+      "DM"
+    ],
+    "number": 5,
+    "nationality": "Uruguay",
+    "age": 22,
+    "height": 187,
+    "foot": "Right",
+    "value": 4800000
+  },
+  {
+    "name": "Nonato",
+    "clubName": "Fluminense FC",
+    "position": "M",
+    "positionsDetailed": [
+      "MC",
+      "DM",
+      "AM"
+    ],
+    "number": 16,
+    "nationality": "Brazil",
+    "age": 27,
+    "height": 174,
+    "foot": "Right",
+    "value": 1100000
+  },
+  {
+    "name": "Lima",
+    "clubName": "Fluminense FC",
+    "position": "M",
+    "positionsDetailed": [
+      "MC",
+      "DM",
+      "AM"
+    ],
+    "number": 45,
+    "nationality": "Brazil",
+    "age": 29,
+    "height": 181,
+    "foot": "Right",
+    "value": 2300000
+  },
+  {
+    "name": "Ruben Lezcano",
+    "clubName": "Fluminense FC",
+    "position": "M",
+    "positionsDetailed": [
+      "MC"
+    ],
+    "number": 18,
+    "nationality": "Paraguay",
+    "age": 21,
+    "height": 175,
+    "foot": "Left",
+    "value": 3800000
+  },
+  {
+    "name": "Otávio",
+    "clubName": "Fluminense FC",
+    "position": "M",
+    "positionsDetailed": [
+      "MC",
+      "DM"
+    ],
+    "number": 94,
+    "nationality": "Brazil",
+    "age": 31,
+    "height": 173,
+    "foot": "Right",
+    "value": 1900000
+  },
+  {
+    "name": "Riquelme Felipe",
+    "clubName": "Fluminense FC",
+    "position": "M",
+    "positionsDetailed": [
+      "MR"
+    ],
+    "number": 28,
+    "nationality": "Brazil",
+    "age": 18,
+    "height": 175,
+    "foot": "Left",
+    "value": 5600000
+  },
+  {
+    "name": "Santiago Moreno",
+    "clubName": "Fluminense FC",
+    "position": "M",
+    "positionsDetailed": [
+      "RW"
+    ],
+    "number": 30,
+    "nationality": "Colombia",
+    "age": 25,
+    "height": 171,
+    "foot": "Right",
+    "value": 3100000
+  },
+  {
+    "name": "Wallace Davi",
+    "clubName": "Fluminense FC",
+    "position": "M",
+    "positionsDetailed": [
+      "MC"
+    ],
+    "number": 55,
+    "nationality": "Brazil",
+    "age": 18,
+    "height": 185,
+    "foot": "Right",
+    "value": 0
+  },
+  {
+    "name": "Thiago Silva",
+    "clubName": "Fluminense FC",
+    "position": "D",
+    "positionsDetailed": [
+      "DC"
+    ],
+    "number": 3,
+    "nationality": "Brazil",
+    "age": 41,
+    "height": 181,
+    "foot": "Right",
+    "value": 560000
+  },
+  {
+    "name": "Ignácio",
+    "clubName": "Fluminense FC",
+    "position": "D",
+    "positionsDetailed": [
+      "DC"
+    ],
+    "number": 4,
+    "nationality": "Brazil",
+    "age": 29,
+    "height": 192,
+    "foot": "Right",
+    "value": 2100000
+  },
+  {
+    "name": "Gabriel Fuentes",
+    "clubName": "Fluminense FC",
+    "position": "D",
+    "positionsDetailed": [
+      "DL"
+    ],
+    "number": 12,
+    "nationality": "Colombia",
+    "age": 28,
+    "height": 180,
+    "foot": "Left",
+    "value": 1800000
+  },
+  {
+    "name": "Samuel Xavier",
+    "clubName": "Fluminense FC",
+    "position": "D",
+    "positionsDetailed": [
+      "DR"
+    ],
+    "number": 2,
+    "nationality": "Brazil",
+    "age": 35,
+    "height": 166,
+    "foot": "Right",
+    "value": 230000
+  },
+  {
+    "name": "Renê",
+    "clubName": "Fluminense FC",
+    "position": "D",
+    "positionsDetailed": [
+      "DL"
+    ],
+    "number": 6,
+    "nationality": "Brazil",
+    "age": 33,
+    "height": 174,
+    "foot": "Left",
+    "value": 515000
+  },
+  {
+    "name": "Juan Freytes",
+    "clubName": "Fluminense FC",
+    "position": "D",
+    "positionsDetailed": [
+      "DC",
+      "DL"
+    ],
+    "number": 22,
+    "nationality": "Argentina",
+    "age": 25,
+    "height": 182,
+    "foot": "Left",
+    "value": 5200000
+  },
+  {
+    "name": "Guga",
+    "clubName": "Fluminense FC",
+    "position": "D",
+    "positionsDetailed": [
+      "DR"
+    ],
+    "number": 23,
+    "nationality": "Brazil",
+    "age": 27,
+    "height": 173,
+    "foot": "Right",
+    "value": 1900000
+  },
+  {
+    "name": "Thiago Santos",
+    "clubName": "Fluminense FC",
+    "position": "D",
+    "positionsDetailed": [
+      "DC",
+      "MC",
+      "DM"
+    ],
+    "number": 29,
+    "nationality": "Brazil",
+    "age": 36,
+    "height": 181,
+    "foot": "Right",
+    "value": 105000
+  },
+  {
+    "name": "Igor Rabello",
+    "clubName": "Fluminense FC",
+    "position": "D",
+    "positionsDetailed": [
+      "DC"
+    ],
+    "number": 21,
+    "nationality": "Brazil",
+    "age": 30,
+    "height": 190,
+    "foot": "Right",
+    "value": 1500000
+  },
+  {
+    "name": "Manoel",
+    "clubName": "Fluminense FC",
+    "position": "D",
+    "positionsDetailed": [
+      "DC"
+    ],
+    "number": 26,
+    "nationality": "Brazil",
+    "age": 35,
+    "height": 182,
+    "foot": "Right",
+    "value": 165000
+  },
+  {
+    "name": "Leonardo de Oliveira Jance",
+    "clubName": "Fluminense FC",
+    "position": "D",
+    "positionsDetailed": [
+      "DL"
+    ],
+    "number": 66,
+    "nationality": "Brazil",
+    "age": 20,
+    "height": 175,
+    "foot": "Left",
+    "value": 0
+  },
+  {
+    "name": "Fábio",
+    "clubName": "Fluminense FC",
+    "position": "G",
+    "positionsDetailed": [
+      "GK"
+    ],
+    "number": 1,
+    "nationality": "Brazil",
+    "age": 45,
+    "height": 188,
+    "foot": "Right",
+    "value": 79000
+  },
+  {
+    "name": "Marcelo Pitaluga",
+    "clubName": "Fluminense FC",
+    "position": "G",
+    "positionsDetailed": [
+      "GK"
+    ],
+    "number": 27,
+    "nationality": "Brazil",
+    "age": 23,
+    "height": 192,
+    "foot": "Right",
+    "value": 210000
+  },
+  {
+    "name": "Vitor Eudes",
+    "clubName": "Fluminense FC",
+    "position": "G",
+    "positionsDetailed": [
+      "GK"
+    ],
+    "number": 98,
+    "nationality": "Brazil",
+    "age": 27,
+    "height": 195,
+    "foot": "Right",
+    "value": 370000
+  },
+  {
+    "name": "Amad Diallo",
+    "clubName": "Manchester United FC",
+    "position": "F",
+    "positionsDetailed": [
+      "RW",
+      "AM",
+      "MR"
+    ],
+    "number": 16,
+    "nationality": "Côte d'Ivoire",
+    "age": 23,
+    "height": 173,
+    "foot": "Left",
+    "value": 49000000
+  },
+  {
+    "name": "Benjamin Šeško",
+    "clubName": "Manchester United FC",
+    "position": "F",
+    "positionsDetailed": [
+      "ST"
+    ],
+    "number": 30,
+    "nationality": "Slovenia",
+    "age": 22,
+    "height": 195,
+    "foot": "Right",
+    "value": 73000000
+  },
+  {
+    "name": "Matheus Cunha",
+    "clubName": "Manchester United FC",
+    "position": "F",
+    "positionsDetailed": [
+      "AM",
+      "ST"
+    ],
+    "number": 10,
+    "nationality": "Brazil",
+    "age": 26,
+    "height": 184,
+    "foot": "Right",
+    "value": 73000000
+  },
+  {
+    "name": "Joshua Zirkzee",
+    "clubName": "Manchester United FC",
+    "position": "F",
+    "positionsDetailed": [
+      "ST"
+    ],
+    "number": 11,
+    "nationality": "Netherlands",
+    "age": 24,
+    "height": 193,
+    "foot": "Right",
+    "value": 26000000
+  },
+  {
+    "name": "Chido Obi-Martin",
+    "clubName": "Manchester United FC",
+    "position": "F",
+    "positionsDetailed": [
+      "ST"
+    ],
+    "number": 32,
+    "nationality": "Denmark",
+    "age": 18,
+    "height": 188,
+    "foot": "Right",
+    "value": 4600000
+  },
+  {
+    "name": "Bruno Fernandes",
+    "clubName": "Manchester United FC",
+    "position": "M",
+    "positionsDetailed": [
+      "MC",
+      "AM",
+      "DM"
+    ],
+    "number": 8,
+    "nationality": "Portugal",
+    "age": 31,
+    "height": 179,
+    "foot": "Right",
+    "value": 37000000
+  },
+  {
+    "name": "Casemiro",
+    "clubName": "Manchester United FC",
+    "position": "M",
+    "positionsDetailed": [
+      "MC",
+      "DM"
+    ],
+    "number": 18,
+    "nationality": "Brazil",
+    "age": 33,
+    "height": 185,
+    "foot": "Right",
+    "value": 7300000
+  },
+  {
+    "name": "Bryan Mbeumo",
+    "clubName": "Manchester United FC",
+    "position": "M",
+    "positionsDetailed": [
+      "RW"
+    ],
+    "number": 19,
+    "nationality": "Cameroon",
+    "age": 26,
+    "height": 173,
+    "foot": "Left",
+    "value": 73000000
+  },
+  {
+    "name": "Kobbie Mainoo",
+    "clubName": "Manchester United FC",
+    "position": "M",
+    "positionsDetailed": [
+      "MC",
+      "DM"
+    ],
+    "number": 37,
+    "nationality": "England",
+    "age": 20,
+    "height": 180,
+    "foot": "Right",
+    "value": 46000000
+  },
+  {
+    "name": "Mason Mount",
+    "clubName": "Manchester United FC",
+    "position": "M",
+    "positionsDetailed": [
+      "AM",
+      "MC"
+    ],
+    "number": 7,
+    "nationality": "England",
+    "age": 26,
+    "height": 181,
+    "foot": "Right",
+    "value": 29000000
+  },
+  {
+    "name": "Diogo Dalot",
+    "clubName": "Manchester United FC",
+    "position": "M",
+    "positionsDetailed": [
+      "DR",
+      "ML",
+      "MR"
+    ],
+    "number": 2,
+    "nationality": "Portugal",
+    "age": 26,
+    "height": 184,
+    "foot": "Right",
+    "value": 26000000
+  },
+  {
+    "name": "Manuel Ugarte",
+    "clubName": "Manchester United FC",
+    "position": "M",
+    "positionsDetailed": [
+      "MC",
+      "DM"
+    ],
+    "number": 25,
+    "nationality": "Uruguay",
+    "age": 24,
+    "height": 182,
+    "foot": "Right",
+    "value": 29000000
+  },
+  {
+    "name": "Patrick Dorgu",
+    "clubName": "Manchester United FC",
+    "position": "M",
+    "positionsDetailed": [
+      "DL",
+      "ML"
+    ],
+    "number": 13,
+    "nationality": "Denmark",
+    "age": 21,
+    "height": 185,
+    "foot": "Left",
+    "value": 23000000
+  },
+  {
+    "name": "Shea Lacey",
+    "clubName": "Manchester United FC",
+    "position": "M",
+    "positionsDetailed": [
+      "RW"
+    ],
+    "number": 61,
+    "nationality": "England",
+    "age": 18,
+    "height": 175,
+    "foot": "Left",
+    "value": 0
+  },
+  {
+    "name": "Lisandro Martínez",
+    "clubName": "Manchester United FC",
+    "position": "D",
+    "positionsDetailed": [
+      "DC",
+      "DL"
+    ],
+    "number": 6,
+    "nationality": "Argentina",
+    "age": 27,
+    "height": 175,
+    "foot": "Left",
+    "value": 37000000
+  },
+  {
+    "name": "Noussair Mazraoui",
+    "clubName": "Manchester United FC",
+    "position": "D",
+    "positionsDetailed": [
+      "DR",
+      "DC",
+      "MR"
+    ],
+    "number": 3,
+    "nationality": "Morocco",
+    "age": 28,
+    "height": 183,
+    "foot": "Right",
+    "value": 21000000
+  },
+  {
+    "name": "Matthijs de Ligt",
+    "clubName": "Manchester United FC",
+    "position": "D",
+    "positionsDetailed": [
+      "DC"
+    ],
+    "number": 4,
+    "nationality": "Netherlands",
+    "age": 26,
+    "height": 188,
+    "foot": "Right",
+    "value": 42000000
+  },
+  {
+    "name": "Harry Maguire",
+    "clubName": "Manchester United FC",
+    "position": "D",
+    "positionsDetailed": [
+      "DC"
+    ],
+    "number": 5,
+    "nationality": "England",
+    "age": 32,
+    "height": 194,
+    "foot": "Right",
+    "value": 10700000
+  },
+  {
+    "name": "Leny Yoro",
+    "clubName": "Manchester United FC",
+    "position": "D",
+    "positionsDetailed": [
+      "DC",
+      "DR"
+    ],
+    "number": 15,
+    "nationality": "France",
+    "age": 20,
+    "height": 190,
+    "foot": "Right",
+    "value": 51000000
+  },
+  {
+    "name": "Luke Shaw",
+    "clubName": "Manchester United FC",
+    "position": "D",
+    "positionsDetailed": [
+      "DL",
+      "DC"
+    ],
+    "number": 23,
+    "nationality": "England",
+    "age": 30,
+    "height": 178,
+    "foot": "Left",
+    "value": 9400000
+  },
+  {
+    "name": "Diego León",
+    "clubName": "Manchester United FC",
+    "position": "D",
+    "positionsDetailed": [
+      "DL"
+    ],
+    "number": 37,
+    "nationality": "Paraguay",
+    "age": 18,
+    "height": 177,
+    "foot": "Left",
+    "value": 3600000
+  },
+  {
+    "name": "Ayden Heaven",
+    "clubName": "Manchester United FC",
+    "position": "D",
+    "positionsDetailed": [
+      "DC"
+    ],
+    "number": 26,
+    "nationality": "England",
+    "age": 19,
+    "height": 189,
+    "foot": "Left",
+    "value": 10600000
+  },
+  {
+    "name": "Tyrell Malacia",
+    "clubName": "Manchester United FC",
+    "position": "D",
+    "positionsDetailed": [
+      "DL"
+    ],
+    "number": 12,
+    "nationality": "Netherlands",
+    "age": 26,
+    "height": 169,
+    "foot": "Left",
+    "value": 5300000
+  },
+  {
+    "name": "Tyler Fredricson",
+    "clubName": "Manchester United FC",
+    "position": "D",
+    "positionsDetailed": [
+      "DC"
+    ],
+    "number": 33,
+    "nationality": "England",
+    "age": 20,
+    "height": 184,
+    "foot": "Right",
+    "value": 2800000
+  },
+  {
+    "name": "Senne Lammens",
+    "clubName": "Manchester United FC",
+    "position": "G",
+    "positionsDetailed": [
+      "GK"
+    ],
+    "number": 31,
+    "nationality": "Belgium",
+    "age": 23,
+    "height": 193,
+    "foot": "Right",
+    "value": 27000000
+  },
+  {
+    "name": "Altay Bayındır",
+    "clubName": "Manchester United FC",
+    "position": "G",
+    "positionsDetailed": [
+      "GK"
+    ],
+    "number": 1,
+    "nationality": "Türkiye",
+    "age": 27,
+    "height": 198,
+    "foot": "Right",
+    "value": 6800000
+  },
+  {
+    "name": "Tom Heaton",
+    "clubName": "Manchester United FC",
+    "position": "G",
+    "positionsDetailed": [
+      "GK"
+    ],
+    "number": 22,
+    "nationality": "England",
+    "age": 39,
+    "height": 188,
+    "foot": "Right",
+    "value": 140000
+  }
+]

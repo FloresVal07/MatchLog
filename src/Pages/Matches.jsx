@@ -16,7 +16,7 @@ function Matches() {
   const [centerDate, setCenterDate] = useState(new Date());
   const scrollContainerRef = useRef(null);
 
-  const { firstHalf, middle, secondHalf } = generateDates(centerDate, 20, 20);
+  const { firstHalf, secondHalf } = generateDates(centerDate, 20, 20);
 
   // Fetch matches
   useEffect(() => {
@@ -55,7 +55,7 @@ function Matches() {
         behavior: "smooth",
       });
     }
-  }, [firstHalf, middle, secondHalf]); // rerun after dates are rendered
+  }, [firstHalf, secondHalf]); // rerun after dates are rendered
 
   // Group matches by league
   const leagueMap = {};
@@ -75,54 +75,51 @@ function Matches() {
       <LoadingPage text={"Loading matches"}/>
     ) : (
       <div className="match-body-container">
-      {/* Header */}
-      <div className="matches-header-container">
-        <img src={Logo} alt="Logo" />
-        <div className="matches-header-buttons-container">
-          <img src={Calendar} alt="Calendar" />
-          <img src={Clock} alt="Clock" />
-          <img src={Search} alt="Search" />
+        {/* Header */}
+        <div className="matches-header-container">
+          <img src={Logo} alt="Logo" />
+          <div className="matches-header-buttons-container">
+            <img src={Calendar} alt="Calendar" />
+            <img src={Clock} alt="Clock" />
+            <img src={Search} alt="Search" />
+          </div>
         </div>
-      </div>
-
-      {/* Scrollable dates */}
-      <div
-        className="matches-header-scroll-container"
-        ref={scrollContainerRef}
-      >
-        {firstHalf.map((date, index) => (
-          <button key={`first-${index}`} onClick={() => setCenterDate(date)}>
-            {date.toLocaleDateString("en-US", { month: "short", day: "numeric" })}
-          </button>
-        ))}
-        <div className="matches-header-scroll-middle-container">
-          {middle.map((date, index) => (
-            <button key={`middle-${index}`} onClick={() => setCenterDate(date)}>
+        {/* Scrollable dates */}
+        <div
+          className="matches-header-scroll-container"
+          ref={scrollContainerRef}
+        >
+          {firstHalf.map((date, index) => (
+            <button key={`first-${index}`} onClick={() => setCenterDate(date)}>
+              {date.toLocaleDateString("en-US", { month: "short", day: "numeric" })}
+            </button>
+          ))}
+          <div className="matches-header-scroll-middle-container">
+            <button key={`middle`} onClick={() => setCenterDate(centerDate)}>
+              {centerDate.toLocaleDateString("en-US", { month: "short", day: "numeric" })}
+            </button>
+          </div>
+          {secondHalf.map((date, index) => (
+            <button key={`second-${index}`} onClick={() => setCenterDate(date)}>
               {date.toLocaleDateString("en-US", { month: "short", day: "numeric" })}
             </button>
           ))}
         </div>
-        {secondHalf.map((date, index) => (
-          <button key={`second-${index}`} onClick={() => setCenterDate(date)}>
-            {date.toLocaleDateString("en-US", { month: "short", day: "numeric" })}
-          </button>
-        ))}
-      </div>
 
-      {groupedLeagues.length === 0 ? (
-        <h1>No matches found for {centerDate.toLocaleDateString("en-US", { month: "short", day: "numeric" })}</h1>
-      ) : (
-        <>
-          <h1>Matches {centerDate.toLocaleDateString("en-US", { month: "short", day: "numeric" })}</h1>
-          {groupedLeagues.map((league) => (
-            <MatchDropDownBarebones
-              key={league.name}
-              leagueName={league.name}
-              matches={league.matches}
-            />
-          ))}
-        </>
-      )}
+        {groupedLeagues.length === 0 ? (
+          <h1>No matches found for {centerDate.toLocaleDateString("en-US", { month: "short", day: "numeric" })}</h1>
+        ) : (
+          <>
+            <h1>Matches {centerDate.toLocaleDateString("en-US", { month: "short", day: "numeric" })}</h1>
+            {groupedLeagues.map((league) => (
+              <MatchDropDownBarebones
+                key={league.name}
+                leagueName={league.name}
+                matches={league.matches}
+              />
+            ))}
+          </>
+        )}
       </div>
     );
 }
