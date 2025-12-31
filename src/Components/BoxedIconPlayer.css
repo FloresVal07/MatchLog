@@ -19,7 +19,6 @@
 }
 .boxed-icon-image-container img {
     border-radius: 50%;
-    background-color: black;
 }
 .boxed-icon-player-image{
     width: 30px;
@@ -92,7 +91,6 @@
     height: 20px;
     padding: 2px 0px;
     border-radius: 9999px;
-    background-color: black;
     margin-top: 5px;
     
 }

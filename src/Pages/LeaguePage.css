@@ -1,0 +1,186 @@
+* { box-sizing: border-box; }
+
+.league-page-wrapper {
+    width: 100vw;
+    height: 100vh;
+    background-color: #121212;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: white;
+}
+
+/* --- Header Section --- */
+.league-header {
+    height: 16.5vh;
+    background-color: #212121;
+    display: flex;
+    align-items: flex-end;
+    padding: 0 25px 20px;
+    border-bottom: 1px solid #333;
+}
+
+.league-header-content { display: flex; align-items: center; gap: 20px; }
+
+.league-main-logo { height: 75px; width: 75px; object-fit: contain; }
+
+.league-header-title { font-size: 38px; font-weight: 800; margin: 0; line-height: 1; }
+
+.league-subtitle { font-size: 16px; color: #5DD1F5; margin-top: 15px; font-weight: 500; }
+
+/* --- Dashboard Layout --- */
+.league-dashboard-content {
+    display: flex;
+    height: 73.5vh;
+    padding: 20px;
+    gap: 20px;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+
+.league-main-column { flex: 2; min-width: 500px; }
+.league-side-column { flex: 1; min-width: 320px; display: flex; flex-direction: column; gap: 20px; }
+
+/* --- Card Components --- */
+.card { background-color: #1e1e1e; border-radius: 12px; padding: 20px; border: 1px solid #2a2a2a; }
+.card-title { margin: 0 0 15px 0; font-size: 18px; color: #eee; border-left: 4px solid #5DD1F5; padding-left: 10px; }
+
+/* --- Table Styles --- */
+.standings-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.standings-table th { color: #777; padding: 12px; text-align: center; border-bottom: 1px solid #333; text-transform: uppercase; font-size: 12px; }
+.standings-table td { padding: 14px; text-align: center; border-bottom: 1px solid #252525; }
+.standings-table tbody tr:hover { background-color: #252525; cursor: default; }
+
+.team-cell { display: flex; align-items: center; gap: 12px; text-align: left; font-weight: 600; }
+.team-cell img { width: 28px; height: 28px; }
+.text-left { text-align: left; }
+.bold-text { color: #5DD1F5; font-weight: 800; }
+
+/* --- Form & Pitch Elements --- */
+.form-row { display: flex; gap: 4px; justify-content: center; }
+.form-dot { width: 22px; height: 22px; border-radius: 4px; font-size: 10px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: white; }
+.form-dot.W { background-color: #2e7d32; }
+.form-dot.D { background-color: #ffa000; }
+.form-dot.L { background-color: #d32f2f; }
+
+.pitch-container { 
+    width: 100%; 
+    aspect-ratio: 4/5; 
+    background: #1a3a1a; 
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 8px; 
+    position: relative; 
+    overflow: hidden;
+}
+.pitch-line { position: absolute; border: 1px solid rgba(255,255,255,0.2); }
+.center-circle { width: 80px; height: 80px; border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.penalty-area { width: 60%; height: 20%; border-top: none; bottom: 0; left: 20%; }
+
+.pitch-player {
+    position: absolute;
+    width: 34px; height: 34px;
+    background: #222;
+    border-radius: 50%;
+    border: 2px solid #5DD1F5;
+    display: flex; align-items: center; justify-content: center;
+}
+.pitch-player span { font-size: 10px; font-weight: bold; color: #5DD1F5; }
+
+/* --- Fixture Styling --- */
+.fixture-item { display: flex; justify-content: space-between; align-items: center; padding: 15px; background: #252525; border-radius: 8px; font-weight: 600; }
+.fixture-badge { background: #333; color: #5DD1F5; padding: 4px 10px; border-radius: 4px; font-size: 13px; }
+
+/* --- Stat Cards Grid --- */
+.stat-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.stat-card {
+    padding: 15px;
+}
+
+/* Update the title holder to have the blue bar */
+.stat-card-title-holder {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-left: 4px solid #5DD1F5; /* Bar moves here */
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+/* Remove the bar from titles inside stat cards so it doesn't double up */
+.stat-card .card-title {
+    border-left: none;
+    padding-left: 0;
+    margin-bottom: 0; /* Let the parent handle the margin */
+}
+
+.card-title.small {
+    font-size: 14px;
+}
+
+.card-title.image {
+    width: 24px;
+}
+
+.stat-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.stat-row:last-child {
+    border-bottom: none;
+}
+
+.stat-player-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stat-player-value-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2c2c2c;
+    width: 34px;
+    aspect-ratio: 1/1;
+    border-radius: 999px;
+}
+
+.stat-rank {
+    color: #777;
+    font-size: 12px;
+    width: 15px;
+}
+
+.stat-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: #ddd;
+}
+
+.stat-value {
+    font-weight: 800;
+    color: #5DD1F5;
+    font-size: 14px;
+}
+
+/* Ensure main column can grow with stats */
+.league-main-column {
+    display: flex;
+    flex-direction: column;
+}

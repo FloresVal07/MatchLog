@@ -61,9 +61,14 @@ const MatchDropdown = ({ leagueName, matches }) => {
               </div>
             </div>
             <div className="score">
-              <h2>
+              {match.score ? 
+              (<h2>
                 {match.score.home} : {match.score.away}
-              </h2>
+              </h2>) 
+              : 
+              (<h2>
+                
+              </h2>)}
             </div>
             <div className="team right">
               <img

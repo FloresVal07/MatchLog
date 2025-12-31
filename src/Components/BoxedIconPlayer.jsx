@@ -1,10 +1,10 @@
 import "./BoxedIconPlayer.css";
 import {convertToFileSyntax} from "./utils.js";
 
-import Gloves from "../assets/navBarIcons/Gloves.png"
+import Gloves from "../assets/navBarIcons/saves.png"
 import CleanSheets from "../assets/navBarIcons/CleanSheet.png";
-import AssistIcon from "../assets/navBarIcons/25036-200-white.png";
-import GoalIcon from "../assets/navBarIcons/Goals.png";
+import AssistIcon from "../assets/navBarIcons/assists.png";
+import GoalIcon from "../assets/navBarIcons/goals.png";
 import MatchesPlayedIcon from "../assets/navBarIcons/MatchesPlayedIcon.png";
 
 //id: 1, name: "Mohamed Salah", age: 31, position: "Forward", club: Club[0] 
@@ -20,7 +20,7 @@ function Icon({playerInput, onClick}) {
         <div className="boxed-icon-container" onClick={() => onClick(playerInput)}>
             <div className="boxed-icon-image-container">
                 <img src={playerSrc} alt={`Headshot Image of ${playerInput.name}`} className="boxed-icon-player-image" />
-                <img src={leagueSrc} alt="League Icon" className="boxed-icon-team-image" />
+                <img src={teamSrc} alt="League Icon" className="boxed-icon-team-image" />
             </div>
             <div className="boxed-icon-name-container">
                 <h3 className="boxed-icon-firstName">{firstName}</h3>

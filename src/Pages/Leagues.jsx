@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import { DataContext } from "../context/DataContext.jsx";
 import { convertToCompactLowercase } from "../Components/utils.js";
 import "./Leagues.css";
@@ -49,7 +50,13 @@ function Leagues() {
             </div>
             <div className="leagues-content-container">
                 {filteredLeagues.map(league => (
-                    <LeagueDropDown key={league.name} leagueInstance={league} matches={league.matches} />
+                    <Link 
+                        key={league.name} 
+                        to={`/leagues/${league.name}`} 
+                        className="league-link-wrapper"
+                    >
+                        <LeagueDropDown leagueInstance={league} />
+                    </Link>
                 ))}
             </div>
         </div>
