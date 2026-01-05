@@ -42,8 +42,81 @@
 .league-side-column { flex: 1; min-width: 320px; display: flex; flex-direction: column; gap: 20px; }
 
 /* --- Card Components --- */
-.card { background-color: #1e1e1e; border-radius: 12px; padding: 20px; border: 1px solid #2a2a2a; }
+.card { 
+    background-color: #1e1e1e;
+    border-radius: 12px; 
+    padding: 20px; 
+    border: 1px solid #2a2a2a; 
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
 .card-title { margin: 0 0 15px 0; font-size: 18px; color: #eee; border-left: 4px solid #5DD1F5; padding-left: 10px; }
+
+.card-round-nav-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+.card-round-nav-button {
+    /* Dimensions - Increased for better "Clickability" */
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+    
+    /* Layout - Center the arrow icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Style - Matching your Dark Theme */
+    background-color: #252525;
+    color: #5DD1F5;
+    border: 1px solid #333;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    
+    /* Typography */
+    font-size: 12px;
+    padding: 0;
+    line-height: 0;
+}
+
+/* Hover State - Glow Effect */
+.card-round-nav-button:hover:not(:disabled) {
+    background-color: #5DD1F5;
+    color: #121212;
+    border-color: #5DD1F5;
+    box-shadow: 0 0 10px rgba(93, 209, 245, 0.3);
+}
+
+/* Disabled State - Prevent interaction at Round 1 or Max Round */
+.card-round-nav-button:disabled {
+    opacity: 0.2;
+    cursor: not-allowed;
+    filter: grayscale(1);
+}
+
+.card-round-nav-select {
+    /* Dimensions - Increased for better "Clickability" */
+    height: 34px;
+    border-radius: 10px;
+    padding: 10px;
+    
+    /* Style - Matching your Dark Theme */
+    background-color: #252525;
+    color: #5DD1F5;
+    border: 1px solid #333;
+    
+    /* Typography */
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 0;
+}
+
 
 /* --- Table Styles --- */
 .standings-table { width: 100%; border-collapse: collapse; font-size: 14px; }
@@ -73,26 +146,64 @@
     overflow: hidden;
 }
 .pitch-line { position: absolute; border: 1px solid rgba(255,255,255,0.2); }
-.center-circle { width: 80px; height: 80px; border-radius: 50%; top: 50%; left: 50%; transform: translate(-50%, -50%); }
+.center-circle { width: 80px; height: 80px; border-radius: 50%; top: 0%; left: 50%; transform: translate(-50%, -50%); }
 .penalty-area { width: 60%; height: 20%; border-top: none; bottom: 0; left: 20%; }
 
 .pitch-player {
     position: absolute;
-    width: 34px; height: 34px;
+    aspect-ratio: 1/1;
+    width: 60px;
     background: #222;
     border-radius: 50%;
     border: 2px solid #5DD1F5;
     display: flex; align-items: center; justify-content: center;
 }
 .pitch-player span { font-size: 10px; font-weight: bold; color: #5DD1F5; }
-
+.pitch-player img { width: 100%; border-radius: 50%; }
+.fixture-item-container{
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px; 
+    background: #252525; 
+    border-radius: 8px; 
+    font-weight: 600; 
+    width: 100%;
+}
 /* --- Fixture Styling --- */
-.fixture-item { display: flex; justify-content: space-between; align-items: center; padding: 15px; background: #252525; border-radius: 8px; font-weight: 600; }
+.fixture-item { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px; 
+    background: #252525; 
+    border-radius: 8px; 
+    font-weight: 600; 
+    width: 100%;
+}
+.fixture-item img { 
+    aspect-ratio: 1/1;
+    width: 35px;
+    border-radius: 9999px;
+}
+.fixture-item span{ 
+    overflow-wrap: break-word;
+    max-width: 25%;
+}
+.fixture-item-leftside-text{
+    text-align: left;
+}
+.fixture-item-rightside-text{
+    text-align: right;
+}
+
 .fixture-badge { background: #333; color: #5DD1F5; padding: 4px 10px; border-radius: 4px; font-size: 13px; }
 
 /* --- Stat Cards Grid --- */
 .stat-cards-container {
     display: grid;
+    justify-content: space-between;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 15px;
     margin-top: 20px;
@@ -100,6 +211,27 @@
 
 .stat-card {
     padding: 15px;
+}
+
+.stat-row {
+    display: flex;
+    justify-content: space-between; /* Pushes player-info left and value-container right */
+    align-items: center;
+    width: 100%;
+    padding: 8px 0;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.stat-player-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1; /* Takes up remaining space to keep the value pushed right */
+}
+
+.stat-player-value-container {
+    flex-shrink: 0; /* Prevents the circle from squishing if the name is long */
+    margin-left: 15px;
 }
 
 /* Update the title holder to have the blue bar */
@@ -167,10 +299,16 @@
     width: 15px;
 }
 
+.stat-picture{
+    aspect-ratio: 1/1;
+    width: 35px;
+    border-radius: 9999px;
+}
+
 .stat-name {
-    font-size: 13px;
-    font-weight: 500;
-    color: #ddd;
+    font-size: 15px;
+    font-weight: bolder;
+    color: white
 }
 
 .stat-value {
