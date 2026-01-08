@@ -157,9 +157,44 @@
     border-radius: 50%;
     border: 2px solid #5DD1F5;
     display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    cursor: pointer;
+    transition: background-color 0.18s ease, transform 0.18s ease;
 }
 .pitch-player span { font-size: 10px; font-weight: bold; color: #5DD1F5; }
 .pitch-player img { width: 100%; border-radius: 50%; }
+
+/* Hover overlay: show player info (name, rating, position) */
+.pitch-player .player-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 6px;
+    background: rgba(0,0,0,0.72);
+    color: #ffffff;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.16s ease;
+    pointer-events: none;
+}
+.pitch-player .player-overlay .name {
+    font-weight: 800;
+    color: #5DD1F5;
+    font-size: 8px;
+}
+.pitch-player .player-overlay .meta {
+    font-size: 8px;
+    font-weight: 800;
+    color: #e6eef2;
+}
+
+.pitch-player:hover { background: transparent; }
+.pitch-player:hover img { opacity: 0.14; transform: scale(1.03); transition: opacity 0.16s ease, transform 0.18s ease; }
+.pitch-player:hover .player-overlay { opacity: 1; pointer-events: auto; }
 .fixture-item-container{
     display: flex; 
     flex-direction: column;

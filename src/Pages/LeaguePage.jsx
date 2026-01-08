@@ -71,7 +71,7 @@ function LeaguePage() {
             if(!selectedRound){console.log("current round is empty"); return;}
             try {
                 const totwRes = await axios.get(
-                `http://localhost:4000/totw/round/${(currentLeague._id).toString()}/10`
+                `http://localhost:4000/totw/round/${(currentLeague._id).toString()}/${selectedRound}`
                 );
                 setCurrentTOTW(totwRes.data);
                 setLoading(false);
@@ -200,17 +200,105 @@ function LeaguePage() {
                             <div className="pitch-container">
                                 <div className="pitch-line center-circle"></div>
                                 <div className="pitch-line penalty-area"></div>
-                                <div className="pitch-player p-fw" style={{top: '5%', left: '42%'}}><img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0].squad[10].player.name)}.png`}/></div>
-                                <div className="pitch-player p-fw" style={{top: '25%', left: '10%'}}><img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0].squad[9].player.name)}.png`}/></div>
-                                <div className="pitch-player p-fw" style={{top: '25%', left: '42%'}}><img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0].squad[8].player.name)}.png`}/></div>
-                                <div className="pitch-player p-fw" style={{top: '25%', left: '75%'}}><img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0].squad[7].player.name)}.png`}/></div>
-                                <div className="pitch-player p-mf" style={{top: '45%', left: '23%'}}><img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0].squad[6].player.name)}.png`}/></div>
-                                <div className="pitch-player p-mf" style={{top: '45%', left: '63%'}}><img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0].squad[5].player.name)}.png`}/></div>
-                                <div className="pitch-player p-df" style={{top: '65%', left: '5%'}}><img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0].squad[4].player.name)}.png`}/></div>
-                                <div className="pitch-player p-df" style={{top: '65%', left: '30%'}}><img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0].squad[3].player.name)}.png`}/></div>
-                                <div className="pitch-player p-df" style={{top: '65%', left: '55%'}}><img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0].squad[2].player.name)}.png`}/></div>
-                                <div className="pitch-player p-df" style={{top: '65%', left: '80%'}}><img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0].squad[1].player.name)}.png`}/></div>
-                                <div className="pitch-player p-gk" style={{top: '85%', left: '42%'}}><img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0].squad[0].player.name)}.png`}/></div>
+
+                                {/* 0: ST */}
+                                <div className="pitch-player p-fw" style={{top: '5%', left: '42%'}}>
+                                    <img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0]?.squad[0]?.player?.name)}.png`} alt="" />
+                                    <div className="player-overlay">
+                                        <div className="name">{currentTOTW[0]?.squad[0]?.player?.name}</div>
+                                        <div className="meta">{currentTOTW[0]?.squad[0]?.rating ?? '—'} • ST</div>
+                                    </div>
+                                </div>
+
+                                {/* 1: RW */}
+                                <div className="pitch-player p-fw" style={{top: '25%', left: '75%'}}>
+                                    <img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0]?.squad[1]?.player?.name)}.png`} alt="" />
+                                    <div className="player-overlay">
+                                        <div className="name">{currentTOTW[0]?.squad[1]?.player?.name}</div>
+                                        <div className="meta">{currentTOTW[0]?.squad[1]?.rating ?? '—'} • RW</div>
+                                    </div>
+                                </div>
+
+                                {/* 2: LW */}
+                                <div className="pitch-player p-fw" style={{top: '25%', left: '10%'}}>
+                                    <img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0]?.squad[2]?.player?.name)}.png`} alt="" />
+                                    <div className="player-overlay">
+                                        <div className="name">{currentTOTW[0]?.squad[2]?.player?.name}</div>
+                                        <div className="meta">{currentTOTW[0]?.squad[2]?.rating ?? '—'} • LW</div>
+                                    </div>
+                                </div>
+
+                                {/* 3: AM */}
+                                <div className="pitch-player p-fw" style={{top: '25%', left: '42%'}}>
+                                    <img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0]?.squad[3]?.player?.name)}.png`} alt="" />
+                                    <div className="player-overlay">
+                                        <div className="name">{currentTOTW[0]?.squad[3]?.player?.name}</div>
+                                        <div className="meta">{currentTOTW[0]?.squad[3]?.rating ?? '—'} • AM</div>
+                                    </div>
+                                </div>
+
+                                {/* 4: MC (Left) */}
+                                <div className="pitch-player p-mf" style={{top: '45%', left: '23%'}}>
+                                    <img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0]?.squad[4]?.player?.name)}.png`} alt="" />
+                                    <div className="player-overlay">
+                                        <div className="name">{currentTOTW[0]?.squad[4]?.player?.name}</div>
+                                        <div className="meta">{currentTOTW[0]?.squad[4]?.rating ?? '—'} • MC</div>
+                                    </div>
+                                </div>
+
+                                {/* 5: MC (Right) */}
+                                <div className="pitch-player p-mf" style={{top: '45%', left: '63%'}}>
+                                    <img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0]?.squad[5]?.player?.name)}.png`} alt="" />
+                                    <div className="player-overlay">
+                                        <div className="name">{currentTOTW[0]?.squad[5]?.player?.name}</div>
+                                        <div className="meta">{currentTOTW[0]?.squad[5]?.rating ?? '—'} • MC</div>
+                                    </div>
+                                </div>
+
+                                {/* 6: DL */}
+                                <div className="pitch-player p-df" style={{top: '65%', left: '5%'}}>
+                                    <img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0]?.squad[6]?.player?.name)}.png`} alt="" />
+                                    <div className="player-overlay">
+                                        <div className="name">{currentTOTW[0]?.squad[6]?.player?.name}</div>
+                                        <div className="meta">{currentTOTW[0]?.squad[6]?.rating ?? '—'} • DL</div>
+                                    </div>
+                                </div>
+
+                                {/* 7: DR */}
+                                <div className="pitch-player p-df" style={{top: '65%', left: '80%'}}>
+                                    <img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0]?.squad[7]?.player?.name)}.png`} alt="" />
+                                    <div className="player-overlay">
+                                        <div className="name">{currentTOTW[0]?.squad[7]?.player?.name}</div>
+                                        <div className="meta">{currentTOTW[0]?.squad[7]?.rating ?? '—'} • DR</div>
+                                    </div>
+                                </div>
+
+                                {/* 8: DC (Left) */}
+                                <div className="pitch-player p-df" style={{top: '65%', left: '30%'}}>
+                                    <img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0]?.squad[8]?.player?.name)}.png`} alt="" />
+                                    <div className="player-overlay">
+                                        <div className="name">{currentTOTW[0]?.squad[8]?.player?.name}</div>
+                                        <div className="meta">{currentTOTW[0]?.squad[8]?.rating ?? '—'} • DC</div>
+                                    </div>
+                                </div>
+
+                                {/* 9: DC (Right) */}
+                                <div className="pitch-player p-df" style={{top: '65%', left: '55%'}}>
+                                    <img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0]?.squad[9]?.player?.name)}.png`} alt="" />
+                                    <div className="player-overlay">
+                                        <div className="name">{currentTOTW[0]?.squad[9]?.player?.name}</div>
+                                        <div className="meta">{currentTOTW[0]?.squad[9]?.rating ?? '—'} • DC</div>
+                                    </div>
+                                </div>
+
+                                {/* 10: GK */}
+                                <div className="pitch-player p-gk" style={{top: '85%', left: '42%'}}>
+                                    <img src={`/assets/playerIcons/${convertToFileSyntax(currentTOTW[0]?.squad[10]?.player?.name)}.png`} alt="" />
+                                    <div className="player-overlay">
+                                        <div className="name">{currentTOTW[0]?.squad[10]?.player?.name}</div>
+                                        <div className="meta">{currentTOTW[0]?.squad[10]?.rating ?? '—'} • GK</div>
+                                    </div>
+                                </div>
                             </div>
                         )}
                     </div>
