@@ -4,7 +4,7 @@ import {convertToFileSyntax} from "./utils.js";
 import Gloves from "../assets/navBarIcons/saves.png"
 import CleanSheets from "../assets/navBarIcons/CleanSheet.png";
 import AssistIcon from "../assets/navBarIcons/assists.png";
-import GoalIcon from "../assets/navBarIcons/goals.png";
+import GoalIcon from "../assets/navBarIcons/goalls.png";
 import MatchesPlayedIcon from "../assets/navBarIcons/MatchesPlayedIcon.png";
 
 //id: 1, name: "Mohamed Salah", age: 31, position: "Forward", club: Club[0] 
