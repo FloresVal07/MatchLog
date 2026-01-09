@@ -14,6 +14,13 @@ const MatchDropdown = ({ leagueName, matches }) => {
     setIsOpen(false);
   };
 
+  const matchIsValid = (match) => {
+    try{
+      return (match.awayClub != null && match.homeClub != null);
+    }catch(err){
+      return false;
+    }
+  }
   const selectedMatch = matches.find((m) => m._id === selectedMatchId);
 
   return (
@@ -45,7 +52,7 @@ const MatchDropdown = ({ leagueName, matches }) => {
         </div>
       </div>
       <div className={`dropdown-list ${isOpen ? "open" : ""}`}>
-        {matches.map((match) => (
+        {matches.filter((match) => matchIsValid(match)).map((match) => (
           <div
             className="dropdown-item"
             key={match._id}
@@ -61,13 +68,13 @@ const MatchDropdown = ({ leagueName, matches }) => {
               </div>
             </div>
             <div className="score">
-              {match.score ? 
+              {match.matchFinished ? 
               (<h2>
                 {match.score.home} : {match.score.away}
               </h2>) 
               : 
               (<h2>
-                
+                {`${match.date} at ${match.time}`}
               </h2>)}
             </div>
             <div className="team right">

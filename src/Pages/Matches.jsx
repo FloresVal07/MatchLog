@@ -81,7 +81,6 @@ function Matches() {
           <div className="matches-header-buttons-container">
             <img src={Calendar} alt="Calendar" />
             <img src={Clock} alt="Clock" />
-            <img src={Search} alt="Search" />
           </div>
         </div>
         {/* Scrollable dates */}

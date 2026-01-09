@@ -34,18 +34,7 @@ function Icon({playerInput, onClick}) {
                     <img src={MatchesPlayedIcon} alt="Matches Played Icon" className="boxed-icon-stats-icon" />
                     <h3 className="boxed-icon-stats-text">34</h3>
                 </div>
-                {playerInput.position === "Forward" ? (
-                    <div className="generic-row">
-                        <div className="boxed-icon-stats-container-container">
-                            <img src={GoalIcon} alt="Goals Icon" className="boxed-icon-stats-icon" />
-                            <h3 className="boxed-icon-stats-text">{playerInput.playerGoals}</h3>
-                        </div>
-                        <div className="boxed-icon-stats-container-container">
-                            <img src={AssistIcon} alt="Assists Icon" className="boxed-icon-stats-icon" />
-                            <h3 className="boxed-icon-stats-text">{playerInput.playerAssists}</h3>
-                        </div>
-                    </div>
-                ) : (
+                {playerInput.position === "G" ? (
                     <div className="generic-row">
                         <div className="boxed-icon-stats-container-container">
                             <img src={CleanSheets} alt="Clean Sheets Icon" className="boxed-icon-stats-icon" />
@@ -54,6 +43,17 @@ function Icon({playerInput, onClick}) {
                         <div className="boxed-icon-stats-container-container">
                             <img src={Gloves} alt="Saves Icon" className="boxed-icon-stats-icon" />
                             <h3 className="boxed-icon-stats-text">120</h3>
+                        </div>
+                    </div>
+                ) : (
+                    <div className="generic-row">
+                        <div className="boxed-icon-stats-container-container">
+                            <img src={GoalIcon} alt="Goals Icon" className="boxed-icon-stats-icon" />
+                            <h3 className="boxed-icon-stats-text">{playerInput.playerGoals}</h3>
+                        </div>
+                        <div className="boxed-icon-stats-container-container">
+                            <img src={AssistIcon} alt="Assists Icon" className="boxed-icon-stats-icon" />
+                            <h3 className="boxed-icon-stats-text">{playerInput.playerAssists}</h3>
                         </div>
                     </div>
                 )}

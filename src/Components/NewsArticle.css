@@ -1,18 +1,23 @@
-/*Smaller news headlines*/
-.news-content-article{
+.news-content-article {
     display: flex;
+    flex-direction: row; /* Ensure they are side-by-side */
     width: 100%;
-    max-width: 500px;
-    gap: 10px;
+    max-width: 550px;
+    align-items: flex-start; 
 }
-.news-content-article-image{
-    aspect-ratio: 369/266;
-    width: 30%;
-    border-radius: 10px;
+
+.news-content-article-image {
+    width: 75%;
+    border-radius: 6px;
+    object-fit: cover;
 }
-.news-content-article-words{
+
+.news-content-article-words {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 10px 0px;
+    flex: 1;             /* Take up all remaining space */
+    height: 100%;
+    /* Remove justify-content: space-between if it's pushing text to the bottom */
+    justify-content: flex-start; 
+    gap: 4px;            /* Tighten space between title and citation */
 }

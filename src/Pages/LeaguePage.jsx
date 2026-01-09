@@ -194,7 +194,7 @@ function LeaguePage() {
                     {/* Pitch Section WILL PULL FROM A TEAM OF THE WEEK DATABASE STORE*/}
                     <div className="card">
                         <h3 className="card-title">Team of the Week</h3>
-                        {currentTOTW.length === 0 ? (
+                        {(currentTOTW.length === 0 || currentTOTW[0]?.squad?.length != 11) ? (
                             <LoadingPage />
                         ) : (
                             <div className="pitch-container">

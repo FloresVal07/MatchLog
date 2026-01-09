@@ -117,3 +117,12 @@
     font-size: 8px;
     color: #C4C4C4;
 }
+
+.news-articles-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;      /* Space between the smaller articles */
+    width: 100%;
+    max-width: 550px; /* Matches your most-popular image width for symmetry */
+    margin-top: 10px;
+}
