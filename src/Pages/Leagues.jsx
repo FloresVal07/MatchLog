@@ -4,7 +4,7 @@ import { DataContext } from "../context/DataContext.jsx";
 import { convertToCompactLowercase } from "../Components/utils.js";
 import "./Leagues.css";
 
-import SearchIcon from "../assets/navBarIcons/searchIcon.png";
+import SearchIcon from "../assets/navBarIcons/SearchIcon.png";
 import LeagueDropDown from "../Components/LeagueDropDown.jsx"; 
 import LoadingPage from "../Components/LoadingPage.jsx";
 
