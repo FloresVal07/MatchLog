@@ -13,8 +13,6 @@ dist
 dist-ssr
 *.local
 
-/public/assets/playerIcons/
-
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
