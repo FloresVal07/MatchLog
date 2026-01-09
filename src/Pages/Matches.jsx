@@ -1,13 +1,13 @@
+const API_URI = import.meta.env.VITE_API_URI;
 import { useRef, useEffect, useState } from "react";
 import { generateDates } from "../Components/utils.js";
 import "./Matches.css";
+import axios from "axios";
 import MatchDropDownBarebones from "../Components/MatchDropDownBarebones.jsx";
 import LoadingPage from "../Components/LoadingPage.jsx";
-import axios from "axios";
 import Logo from "../assets/websiteLogos/finalizedLogo-removebg-small.png";
 import Calendar from "../assets/navBarIcons/CalendarIcon.png";
 import Clock from "../assets/navBarIcons/ClockIcon.png";
-import Search from "../assets/navBarIcons/SearchIcon.png";
 
 function Matches() {
   // will be fetched from the frontend later
@@ -24,7 +24,7 @@ function Matches() {
     const fetchData = async () => {
       try {
         const matchesRes = await axios.get(
-          `http://localhost:4000/matches/date/${centerDate.toISOString().split("T")[0]}`
+          `${API_URI}/matches/date/${centerDate.toISOString().split("T")[0]}`
         );
         setMatches(matchesRes.data);
         setLoading(false);

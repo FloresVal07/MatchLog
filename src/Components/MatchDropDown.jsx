@@ -1,3 +1,5 @@
+const API_URI = import.meta.env.VITE_API_URI;
+
 import { useState, useEffect} from "react";
 import { convertToFileSyntax } from "./utils.js";
 import "./MatchDropDown.css";
@@ -14,7 +16,7 @@ const MatchDropdown = ({ leagueInstance }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const matchesRes = await axios.get(`http://localhost:4000/matches/league/${leagueInstance._id}`);
+        const matchesRes = await axios.get(`/${API_URI}/matches/league/${leagueInstance._id}`);
         setMatches(matchesRes.data);
       } catch (err) {
         console.error("Error fetching data: within MatchDropdown", err);

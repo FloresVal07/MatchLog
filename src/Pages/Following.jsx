@@ -1,3 +1,4 @@
+const API_URI = import.meta.env.VITE_API_URI;
 import "./Following.css";
 import { DataContext } from "../context/DataContext.jsx";
 import {useContext, useEffect, useState} from "react";
@@ -22,7 +23,7 @@ function Following() {
       try {
         console.log("FETCHED PLAYERS FOR : ", selectedClubs[0].name);
         const playersRes = await axios.get(
-          `http://localhost:4000/players/club/${selectedClubs[0]._id}`
+          `${API_URI}/players/club/${selectedClubs[0]._id}`
         );
         setLoadingPlayers(false);
         setPlayers(playersRes.data);
@@ -39,7 +40,7 @@ function Following() {
         });
 
         const playersRes = await axios.get(
-          `http://localhost:4000/players/clubs/${selectedClubs.map(club => club._id).join(",")}`
+          `${API_URI}/players/clubs/${selectedClubs.map(club => club._id).join(",")}`
         );
         setLoadingPlayers(false);
         setPlayers(playersRes.data);

@@ -1,3 +1,4 @@
+const API_URI = import.meta.env.VITE_API_URI;
 import "./News.css";
 import axios from 'axios';
 import { useState, useEffect } from 'react';
@@ -19,7 +20,7 @@ function News(){
     useEffect(() => {
         const fetchNews = async () => {
             try {
-                const newsRes = await axios.get(`http://localhost:4000/news/`);
+                const newsRes = await axios.get(`${API_URI}/news/`);
                 setQuerriedNews(newsRes.data);
                 console.log("Fetched News");
             } catch (err) {
@@ -44,7 +45,7 @@ function News(){
     const handleNewsClick = async (id) => {
         try {
             // We use backticks (``) to insert the id into the URL string
-            const response = await axios.post(`http://localhost:4000/news/increase/${id}`);
+            const response = await axios.post(`${API_URI}/news/increase/${id}`);
             console.log("View count updated!", response.data);
             // You might want to update the local state here to show the new view count
         } catch (error) {

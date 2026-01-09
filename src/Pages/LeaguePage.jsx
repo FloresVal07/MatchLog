@@ -1,3 +1,4 @@
+const API_URI = import.meta.env.VITE_API_URI;
 import "./LeaguePage.css";
 import LoadingPage from "../Components/LoadingPage.jsx";
 import { useParams } from "react-router-dom";
@@ -32,7 +33,7 @@ function LeaguePage() {
         const fetchData = async () => {
           try {
             const leagueRes = await axios.get(
-              `http://localhost:4000/leagues/${leagueSlug}`
+              `${API_URI}/leagues/${leagueSlug}`
             );
             setCurrentLeague(leagueRes.data);
             if (leagueRes.data.currentRound) {
@@ -51,7 +52,7 @@ function LeaguePage() {
             if(!selectedRound){console.log("current round is empty"); return;}
             try {
                 const matchesRes = await axios.get(
-                `http://localhost:4000/matches/round/${(currentLeague._id).toString()}/${selectedRound}`
+                `${API_URI}/matches/round/${(currentLeague._id).toString()}/${selectedRound}`
                 );
                 setMatches(matchesRes.data);
             } catch (err) {
@@ -71,7 +72,7 @@ function LeaguePage() {
             if(!selectedRound){console.log("current round is empty"); return;}
             try {
                 const totwRes = await axios.get(
-                `http://localhost:4000/totw/round/${(currentLeague._id).toString()}/${selectedRound}`
+                `${API_URI}/totw/round/${(currentLeague._id).toString()}/${selectedRound}`
                 );
                 setCurrentTOTW(totwRes.data);
                 setLoading(false);

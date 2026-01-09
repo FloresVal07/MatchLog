@@ -1,4 +1,5 @@
 // src/context/DataContext.jsx
+const API_URI = import.meta.env.VITE_API_URI;
 import { createContext, useState, useEffect } from "react";
 import axios from "axios";
 
@@ -12,8 +13,8 @@ export const DataProvider = ({ children }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const leaguesRes = await axios.get("http://localhost:4000/leagues");
-        const clubsRes = await axios.get("http://localhost:4000/clubs");
+        const leaguesRes = await axios.get(`${API_URI}/leagues`);
+        const clubsRes = await axios.get(`${API_URI}/clubs`);
 
         setLeagues(leaguesRes.data);
         setClubs(clubsRes.data);
